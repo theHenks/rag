@@ -103,7 +103,9 @@ class JobFile:
 class Catalog:
     def __init__(self, path: Path):
         path.parent.mkdir(parents=True, exist_ok=True)
-        self.db = sqlite3.connect(path, timeout=30, isolation_level=None)
+        # The MCP server calls tools from worker threads; sqlite3 serializes
+        # access to one connection, so sharing it across threads is safe.
+        self.db = sqlite3.connect(path, timeout=30, isolation_level=None, check_same_thread=False)
         self.db.row_factory = sqlite3.Row
         self.db.execute("PRAGMA journal_mode=WAL")
         self.db.execute("PRAGMA foreign_keys=ON")

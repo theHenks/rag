@@ -114,6 +114,12 @@ def _cmd_doctor(args, services: Services) -> int:
     return 0 if all(ok for name, ok, _ in results if not name.startswith("ollama")) else 1
 
 
+def _cmd_mcp(args, services: Services) -> int:
+    from rag.mcp_server import serve
+    serve()
+    return 0
+
+
 def _cmd_worker(args, services: Services) -> int:
     run_worker(services, progress=lambda m: print(m, flush=True))
     return 0
@@ -159,6 +165,7 @@ def _parser() -> argparse.ArgumentParser:
 
     sub.add_parser("rebuild", help="re-index everything from the MinerU cache").set_defaults(fn=_cmd_rebuild)
     sub.add_parser("doctor", help="check Qdrant, MinerU, Ollama and disk").set_defaults(fn=_cmd_doctor)
+    sub.add_parser("mcp", help="run the MCP server on stdio").set_defaults(fn=_cmd_mcp)
     sub.add_parser("worker", help="run queued jobs (started by add and enrich)").set_defaults(fn=_cmd_worker)
     return parser
 
