@@ -26,6 +26,7 @@ start)
         mv "$tmp/qdrant" "$BIN"
         rm -rf "$tmp"
     fi
+    cd "$DIR"  # qdrant writes a marker file into its working directory
     QDRANT__SERVICE__HOST=127.0.0.1 \
     QDRANT__STORAGE__STORAGE_PATH="$DIR/storage" \
     QDRANT__STORAGE__SNAPSHOTS_PATH="$DIR/snapshots" \
