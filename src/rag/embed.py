@@ -30,7 +30,13 @@ def _sparse(embedding) -> models.SparseVector:
 
 
 def bm25(config: Config):
+    import onnxruntime
     from fastembed import SparseTextEmbedding
+
+    # onnxruntime's telemetry flushes at interpreter exit and can spin there
+    # indefinitely when its endpoint is unreachable, so a finished worker or
+    # test process never exits.
+    onnxruntime.disable_telemetry_events()
 
     return SparseTextEmbedding(config.sparse_model, cache_dir=str(config.models_dir))
 
