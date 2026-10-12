@@ -1,0 +1,728 @@
+[
+ {
+  "type": "aside_text",
+  "text": "arXiv:2207.07638v2 [nucl-ex] 10 Feb 2023",
+  "bbox": [
+   22,
+   263,
+   60,
+   720
+  ],
+  "page_idx": 0
+ },
+ {
+  "type": "text",
+  "text": "Final Result of the Majorana Demonstrator’s Search for Neutrinoless Double-β Decay in $^ { 7 6 } \\mathbf { G e }$",
+  "text_level": 1,
+  "bbox": [
+   96,
+   61,
+   909,
+   100
+  ],
+  "page_idx": 0
+ },
+ {
+  "type": "text",
+  "text": "I.J. Arnquist,<sup>1</sup> F.T. Avignone III,<sup>2</sup>, 3 A.S. Barabash,<sup>4</sup> C.J. Barton,<sup>5</sup> P.J. Barton,<sup>6</sup> K.H. Bhimani,<sup>7</sup>, 8 E. Blalock,<sup>9</sup>, 8 B. Bos,<sup>7</sup>, 8 M. Busch,<sup>10</sup>, 8 M. Buuck,<sup>11</sup>, ∗ T.S. Caldwell,<sup>7</sup>, 8 Y-D. Chan,<sup>6</sup> C.D. Christofferson,<sup>12</sup> P.-H. Chu,<sup>13</sup> M.L. Clark,<sup>7</sup>, 8 C. Cuesta,<sup>14</sup> J.A. Detwiler,<sup>11</sup> Yu. Efremenko,<sup>15</sup>, 3 H. Ejiri,<sup>16</sup> S.R. Elliott,<sup>13</sup> G.K. Giovanetti,<sup>17</sup> M.P. Green,<sup>9</sup>, 8, 3 J. Gruszko,<sup>7</sup>, 8 I.S. Guinn,<sup>7</sup>, 8 V.E. Guiseppe,<sup>3</sup> C.R. Haufe,<sup>7</sup>, 8 R. Henning,<sup>7</sup>, 8 D. Hervas Aguilar,<sup>7</sup>, 8 E.W. Hoppe,<sup>1</sup> A. Hostiuc,<sup>11</sup> M.F. Kidd,<sup>18</sup> I. Kim,13 R.T. Kouzes, T.E. Lannen V,<sup>2</sup> A. Li,<sup>7</sup>, 8 A.M. Lopez,<sup>15</sup> J.M. López-Castaño,<sup>3</sup> E.L. Martin,<sup>7</sup>, 8, † R.D. Martin,<sup>19</sup> R. Massarczyk,<sup>13</sup> S.J. Meijer,<sup>13</sup> S. Mertens,<sup>20</sup>, 21 T.K. Oli,<sup>5</sup> G. Othman,<sup>7</sup>, 8, ‡ L.S. Paudel,<sup>5</sup> W. Pettus,<sup>22</sup>, 23 A.W.P. Poon,<sup>6</sup> D.C. Radford,<sup>3</sup> A.L. Reine,<sup>7</sup>, 8 K. Rielage,<sup>13</sup> N.W. Ruof,<sup>11</sup> D.C. Schaper,<sup>13</sup> D. Tedeschi,<sup>2</sup> R.L. Varner,<sup>3</sup> S. Vasilyev,<sup>24</sup> J.F. Wilkerson,<sup>7</sup>, 8, 3 C. Wiseman,<sup>11</sup> W. Xu,<sup>5</sup> C.-H. Yu,<sup>3</sup> and B.X. Zhu<sup>13</sup>, §",
+  "bbox": [
+   111,
+   113,
+   893,
+   262
+  ],
+  "page_idx": 0
+ },
+ {
+  "type": "text",
+  "text": "(Majorana Collaboration)",
+  "bbox": [
+   398,
+   264,
+   607,
+   280
+  ],
+  "page_idx": 0
+ },
+ {
+  "type": "text",
+  "text": "<sup>1</sup>Pacific Northwest National Laboratory, Richland, WA 99354, USA <sup>2</sup>Department of Physics and Astronomy, University of South Carolina, Columbia, SC 29208, USA <sup>3</sup>Oak Ridge National Laboratory, Oak Ridge, TN 37830, USA <sup>4</sup>National Research Center “Kurchatov Institute” Institute for Theoretical and Experimental Physics, Moscow, 117218 Russia <sup>5</sup>Department of Physics, University of South Dakota, Vermillion, SD 57069, USA <sup>6</sup>Nuclear Science Division, Lawrence Berkeley National Laboratory, Berkeley, CA 94720, USA <sup>7</sup>Department of Physics and Astronomy, University of North Carolina, Chapel Hill, NC 27514, USA <sup>8</sup>Triangle Universities Nuclear Laboratory, Durham, NC 27708, USA <sup>9</sup>Department of Physics, North Carolina State University, Raleigh, NC 27695, USA 10<sub>Department</sub> of Physics, Duke University, Durham, NC 27708, USA 11<sub>Center</sub> for Experimental Nuclear Physics and Astrophysics, and Department of Physics, University of Washington, Seattle, WA 98195, USA 12<sub>South</sub> Dakota Mines, Rapid City, SD 57701, USA 13<sub>Los</sub> Alamos National Laboratory, Los Alamos, NM 87545, USA 14<sub>Centro</sub> de Investigaciones Energéticas, Medioambientales y Tecnológicas, CIEMAT 28040, Madrid, Spain 15<sub>Department</sub> of Physics and Astronomy, University of Tennessee, Knoxville, TN 37916, USA 16<sub>Research</sub> Center for Nuclear Physics, Osaka University, Ibaraki, Osaka 567-0047, Japan 17<sub>Physics</sub> Department, Williams College, Williamstown, MA 01267, USA 18<sub>Tennessee</sub> Tech University, Cookeville, TN 38505, USA 19<sub>Department</sub> of Physics, Engineering Physics and Astronomy, Queen’s University, Kingston, ON K7L 3N6, Canada 20<sub>Max</sub>-<sub>P</sub>lanck-Institut für Physik, München, 80805, Germany 21<sub>Physik</sub> Department and Excellence Cluster Universe, Technische Universität, München, 85748 Germany 22<sub>Department</sub> of Physics, Indiana University, Bloomington, IN 47405, USA 23<sub>IU</sub> Center for Exploration of Energy and Matter, Bloomington, IN 47408, USA 24<sub>Joint</sub> Institute for Nuclear Research, Dubna, 141980 Russia (Dated: February 13, 2023)",
+  "bbox": [
+   88,
+   281,
+   919,
+   626
+  ],
+  "page_idx": 0
+ },
+ {
+  "type": "text",
+  "text": "The Majorana Demonstrator searched for neutrinoless double-β decay (0νββ) of 76<sub>Ge</sub> using modular arrays of high-purity Ge detectors operated in vacuum cryostats in a low-background shield. The arrays operated with up to 40.4 kg of detectors (27.2 kg enriched to ∼88% in $^ { 7 6 } \\mathrm { G e ) }$ . From these measurements, the Demonstrator has accumulated 64.5 kg yr of enriched active exposure. With a world-leading energy resolution of 2.52 keV FWHM at the 2039 keV $Q _ { \\beta \\beta }$ (0.12%), we set a half-life limit of $0 \\nu \\beta \\beta$ in $^ { 7 6 } \\mathrm { G e }$ at $T _ { 1 / 2 } > 8 . 3 \\times 1 0 ^ { 2 5 }$ yr (90% C.L.). This provides a range of upper limits on $m _ { \\beta \\beta }$ of (113 − 269) meV (90% C.L.), depending on the choice of nuclear matrix elements.",
+  "bbox": [
+   172,
+   633,
+   834,
+   730
+  ],
+  "page_idx": 0
+ },
+ {
+  "type": "text",
+  "text": "PACS numbers: 23.40-s, 23.40.Bw, 14.60.Pq, 27.50.+j",
+  "bbox": [
+   173,
+   740,
+   507,
+   755
+  ],
+  "page_idx": 0
+ },
+ {
+  "type": "text",
+  "text": "Neutrinoless double-beta decay (0νββ) is a hypothetical nuclear process involving the unbalanced creation of two new matter particles but no antimatter [1–5]. This lepton-number-violating process is predicted generically by many grand-unification theories, as well as by lep togenesis [6], a leading explanation of why the universe is matter-dominated. A half-life measurement is sensitive to the Majorana mass of the electron neutrino, $m _ { \\beta \\beta }$ and requires nuclear matrix elements that must be cal-",
+  "bbox": [
+   82,
+   778,
+   492,
+   916
+  ],
+  "page_idx": 0
+ },
+ {
+  "type": "text",
+  "text": "culated through many body nuclear theory [7, 8]. The experimental signature of $0 \\nu \\beta \\beta$ is a peak in total electron kinetic energy at the Q-value $( Q _ { \\beta \\beta } )$ of the decay. While double-beta decay with the emission of two neutrinos (2νββ) has been directly observed in 9 isotopes [9], no experiment has yet seen 0νββ. A robust program involving many low-background experiments has searched for $0 \\nu \\beta \\beta$ in multiple isotopes, with half-life limits surpassing $1 0 ^ { 2 5 - 2 6 }$ yr in some cases [10–14]. For example,",
+  "bbox": [
+   511,
+   778,
+   923,
+   917
+  ],
+  "page_idx": 0
+ },
+ {
+  "type": "page_number",
+  "text": "2",
+  "bbox": [
+   908,
+   35,
+   921,
+   47
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "the GERDA experiment has established the leading halflife limit in $^ { 7 6 } \\mathrm { \\widetilde { G e } ~ o f ~ } 1 . 8 \\times 1 0 ^ { 2 6 } \\mathrm { ~ y r ~ [ 1 1 ] }$",
+  "bbox": [
+   82,
+   66,
+   491,
+   98
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "The Majorana Demonstrator searched for $0 \\nu \\beta \\beta$ in $^ { 7 6 } \\mathrm { G e } \\; [ 1 5 ]$ using high purity germanium (HPGe) detectors enriched in this isotope. Since its most recent published limit using data collected from 2015–2018 [10], the experiment has more than doubled its previous enriched active detector exposure from 26.1 kg yr to 64.5 kg yr. HPGe detectors are a mature technology offering excellent energy resolution and low intrinsic background [16]. Germanium can be enriched to a high isotopic fraction of $^ { 7 6 } \\mathrm { G e } ,$ which acts as both source and detector, enabling a high detection efficiency. The Majorana Demonstrator consisted of two modules, each with an array of HPGe detectors operated in a vacuum cryostat. The cryostats and structural components were fabricated from ultra-low background copper that was electroformed underground (UGEFCu) [17] and carefully selected plastics. Low background front end electronics, cables, and connectors were developed for the experiment [18, 19]. The modules were enclosed by a multi-layered low-background shield, consisting of, from inner to outer layers, 5 cm of UGEFCu, 5 cm of commercially sourced copper, and 45 cm of high-purity lead. This shield construct was enclosed in an aluminum radon exclusion box that was constantly purged with low-Rn liquid nitrogen (LN) boil-off gas. The Rn-exclusion box was surrounded by an active muon veto consisting of 32 plastic scintillating panels with nearly 4π coverage [20]. The vacuum and cryogenic hardware and control electronics were located just outside this enclosure and connected to the cryostats via a shielded crossarm penetrating the other layers. Finally, the entire assembly was enclosed in 5 cm borated and 25 cm pure polyethylene neutron shielding. $\\mathrm { A ~ ^ { 2 2 8 } T h }$ line source for each module was stored outside the shield, with a penetration and helical track enabling its deployment for detector calibrations [21]. The experiment was located in the Davis campus on the 4850-foot level (4300 m.w.e.) of the Sanford Underground Research Facility (SURF) in Lead, South Dakota [22]. To ensure low backgrounds, components of the modules and shield were subjected to an extensive radioassay campaign [23]. To reduce cosmogenic activation, time spent on the surface for detectors and detector components was minimized and logged in a database [24].",
+  "bbox": [
+   81,
+   98,
+   493,
+   749
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "Three novel HPGe detector geometries were used, each with a p-type, point-like electrode centered on one face and an n-type electrode covering the remaining surfaces, separated by a thin passivated surface. The Demonstrator primarily used p-type, point contact (PPC) detectors [25, 26] enriched to $8 7 . 4 \\pm 0 . 5 \\% \\mathrm { i n } ^ { 7 6 } \\mathrm { G e }$ and having masses of 0.6 − 1.2 kg. We also used Broad Energy Germanium $\\mathrm { ( B E G e ^ { T M } ) }$ Detectors [27] made of natural Ge with typical masses of ∼0.6 kg, and inverted coaxial point contact (ICPC) detectors [28] enriched to 88±1% in $^ { 7 6 } \\mathrm { G e } _ { 1 }$ with masses of 1.3−2.1 kg. Module 1 began opera-",
+  "bbox": [
+   81,
+   748,
+   493,
+   916
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "tion in July 2015 and Module 2 began in Aug. 2016. The modules were installed with 35 PPC detectors (29.7 kg) and 23 BEGe detectors (14.4 kg), of which up to 22.1 kg of enriched detectors and 10.0 kg of natural detectors were operational. The most common reason for non-operating detectors was failure in the high voltage and signal electronics cable connectors. In Nov. 2019, Module 2 was removed from the shield and upgraded with improved cables, connectors and shielding; as a result, all Module 2 detectors were operational during subsequent run time. Five PPC detectors (5.5 kg) were removed for early testing in the LEGEND-200 experiment [29] and replaced with four ICPC detectors (6.7 kg). After this, up to 27.2 kg of enriched detectors and 13.2 kg of natural detectors were operational.",
+  "bbox": [
+   511,
+   66,
+   923,
+   294
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "Detector signals were digitized using ADCs developed for the GRETINA Experiment [30], with 14 bit resolution and a sampling rate of 100 MS/s [31]. Each detector was read out with two gains, a high gain channel with dynamic range up to ∼3 MeV, and a low gain channel extending up to ∼10 MeV. The high gain channels were used for most of the analysis; use of low gain channels is reserved for events with no high gain waveform available, due to dead time after a noise trigger or rejection of the high gain channel, and for high energy events [32, 33]. An internal trapezoidal filter was used to trigger each ADC channel independently, recording samples in a $2 0 . 2 \\mathrm { ~ - ~ } 3 8 . 2 ~ \\mu \\mathrm { s }$ acquisition window to disk. A pulser signal was fed to the front-end electronics every 8 s to monitor the electronics stability and detector livetime.",
+  "bbox": [
+   511,
+   293,
+   923,
+   535
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "During blinded operation, 75% of physics runs were blinded by restricting access to data files, with cycles of 31 h of open data followed by 93 h of blind data. Typical trigger rates during physics runs for the full array were around 70 Hz, dominated by near-threshold and pulser events. Physics run data are divided into 13 datasets based on changes to the experimental configuration, described in the Supplemental Material [34]. Once per week, the $^ { 2 2 8 } \\mathrm { T h }$ line sources were deployed for 60–90 min, with trigger rates of up to 3000 Hz. Every 2–3 months a long calibration run with >18 h of data was collected for each module. In Jan. 2019, a $^ { 5 6 } \\mathrm { C o }$ line source was inserted into each track, and calibration data were collected for one week with each module. This dataset has multiple double-escape peaks (DEPs) and single-escape peaks (SEPs) in an energy range bracketing $Q _ { \\beta \\beta }$ between 1500 keV and 2500 keV. These act as proxies for $0 \\nu \\beta \\beta$ events and were used for systematics measurements.",
+  "bbox": [
+   511,
+   535,
+   924,
+   809
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "The digitized waveforms are used to calculate event energies and pulse-shape discrimination (PSD) parameters that are used to reject likely backgrounds. In this analysis, we use a set of improved analysis routines compared to the analyses described in Refs. [10, 35], and we will note these changes. In addition, the PPC and ICPC detectors utilize subtly different digital signal processing",
+  "bbox": [
+   511,
+   808,
+   924,
+   916
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "page_number",
+  "text": "3",
+  "bbox": [
+   907,
+   35,
+   921,
+   47
+  ],
+  "page_idx": 2
+ },
+ {
+  "type": "table",
+  "img_path": "images/page_2_table_1.jpg",
+  "table_caption": [],
+  "table_footnote": [
+   "∗A/E in the case of ICPCs"
+  ],
+  "table_body": "<table><tbody><tr><td></td><td>PPCs</td><td>ICPCs</td></tr><tr><td>Total Exposure</td><td>67.94 kg yr</td><td>3.12 kg yr</td></tr><tr><td>Active Exposure</td><td>61.64<sup>+</sup>-<sup>0</sup>1..8197 <sup>kg</sup> <sup>yr</sup></td><td>2.82<sup>+</sup>-<sup>0</sup>0..00<sup>4</sup>5 <sup>kg</sup> <sup>yr</sup></td></tr><tr><td>FWHM@2039 keV</td><td>2.52 ± 0.08 keV</td><td>2.55 ± 0.09 keV</td></tr><tr><td>76<sub>Ge</sub> <sub>Enrichment</sub></td><td>87.4 ± 0.5%</td><td>88.0 ± 1.0%</td></tr><tr><td>PSD Eff.</td><td>86.1 ± 3.9%</td><td>81.0<sup>+</sup>-<sup>5</sup>7<sup>.</sup>.<sup>3</sup>3%</td></tr><tr><td>Data Cleaning</td><td>99.9 ± 0.1%</td><td>99.9 ± 0.1%</td></tr><tr><td>Low AvsE* Cut</td><td>89.9<sup>+</sup>-<sup>3</sup>3<sup>.</sup>.<sup>3</sup>2%</td><td>85.2<sup>+</sup>-<sup>4</sup>5<sup>.</sup>.<sup>2</sup>9%</td></tr><tr><td>DCR Cut</td><td>98.5 ± 0.7%</td><td>97.9 ± 1.1%</td></tr><tr><td>High AvsE* Cut</td><td>97.9 ± 1.0%</td><td>97.8 ± 1.4%</td></tr><tr><td>Late Charge Cut</td><td>99.3 ± 0.7%</td><td>99.5<sup>+</sup>-<sup>0</sup>0<sup>.</sup>.<sup>5</sup>9%</td></tr><tr><td>Containment Eff.</td><td>90.8 ± 1.3%</td><td>91.9 ± 0.8%</td></tr><tr><td>ROI Peak Eff.</td><td>86.3 ± 1.1%</td><td>86.9 ± 1.2%</td></tr></tbody></table>",
+  "bbox": [
+   87,
+   64,
+   483,
+   246
+  ],
+  "page_idx": 2
+ },
+ {
+  "type": "text",
+  "text": "TABLE I. A summary of key analysis parameters. The FWHM and efficiency values represent an exposure-weighted average across datasets. The PSD efficiencies are calculated for cuts applied in the order listed, and are applied multi-plicatively. The ROI peak efficiency uses the optimal ROI [36] defined for the Feldman-Cousins limit.",
+  "bbox": [
+   82,
+   271,
+   491,
+   353
+  ],
+  "page_idx": 2
+ },
+ {
+  "type": "text",
+  "text": "algorithms; we describe the PPC parameters first, followed by the ICPC parameters.",
+  "bbox": [
+   82,
+   382,
+   489,
+   413
+  ],
+  "page_idx": 2
+ },
+ {
+  "type": "text",
+  "text": "Event energies are reconstructed from waveform amplitudes which are measured using a pole-zero (PZ) corrected trapezoidal filter. Before applying any digital filters, waveforms are corrected for digitizer non-linearity [37]. The energy is measured from the amplitude of the filtered waveform at a fixed time after the start time $\\left( t _ { 0 } \\right)$ of the signal. $\\mathrm { B y }$ optimizing the PZ time constant for energy resolution, we minimize energy degradation due to charge trapping inside of the detectors [38]. When analyzing energy calibrations, we model gamma peak shapes using the sum of a gaussian component and an exponentially-modified gaussian low-energy tail [10]. Peak shape parameters are determined using a simultaneous fit of the eight most prominent gamma-rays between 238–2615 keV. Energy gains are calculated for each weekly calibration using the 2615 keV peak from the 228<sub>Th</sub> spectra and fixing the zero-ADC energy at 0 keV. For each full dataset, a fine-tuned correction to the energy is obtained by combining all calibration runs and performing a new simultaneous peak-fit, with peak positions fit to a quadratic function of energy. The exposureweighted average FWHM at 2039 keV across all PPC detectors, including broadening due to gain drift and energy nonlinearities, is $2 . 5 2   \\pm   0 . 0 8 \\; \\mathrm { k e V }$ . Since previous data releases [10, 35], the leading-edge fitter for finding $t _ { 0 }$ was improved to use an asymmetric trapezoidal filter that preserves information in the rising edge, and $t _ { 0 }$ was corrected for energy-dependent trigger walk; in addition, the quadratic energy correction is new to this analysis. These changes correct nonlinearities in the energy response, especially at energies <100 keV, and reduce the low-energy tail.",
+  "bbox": [
+   81,
+   414,
+   492,
+   898
+  ],
+  "page_idx": 2
+ },
+ {
+  "type": "text",
+  "text": "0νββ events predominantly occur in the bulk region",
+  "bbox": [
+   99,
+   899,
+   491,
+   915
+  ],
+  "page_idx": 2
+ },
+ {
+  "type": "text",
+  "text": "of enriched detectors, with the charge cloud localized within ∼1 mm of the decay site. Background rejection cuts are applied to remove events with multi-site topologies, events on the surfaces of detectors, and non-physical events. Detector triggers within a rolling $4 ~ \\mu \\mathrm { s }$ window are grouped into events, and events with a detector multiplic-$\\mathrm { i t y } > 1$ are rejected. The muon veto system triggers when a PMT signal above threshold is measured in two or more veto panels simultaneously, and the pulse amplitude of all panels are recorded. A separate analysis identifies muon candidate events when at least two muon veto panels on different surfaces surpass an analysis threshold, while rejecting events triggered by LED pulsers used to monitor the panels. Any events within 20 ms before and 1 s after a muon candidate are tagged and rejected [20, 40]. All events for a module are rejected during periods of increased microphonic noise while LN dewars were refilled. Multiple data cleaning PSD cuts are performed, accepting >99.9% of signal-like events, to reject non-physical waveforms, pileup waveforms, and pulser events.",
+  "bbox": [
+   511,
+   66,
+   923,
+   370
+  ],
+  "page_idx": 2
+ },
+ {
+  "type": "text",
+  "text": "The point-contact detector geometries have relatively fast charge collection and a highly localized weighting potential, allowing for the identification and rejection of events that deposit energy in multiple sites within a detector, such as Compton-scattered gammas. The parameter AvsE represents a comparison between the maximum amplitude (A) of a waveform current pulse and the total energy (E). Multi-site events have lower A for a given E than single-site events [41]. AvsE is tuned with long 228<sub>Th</sub> calibration runs to accept 90% of events in the predominantly-single-site 208<sub>Tl</sub> DEP at 1592 keV. Compared to previous data releases [10, 35], AvsE has undergone several upgrades. First, the 56<sub>Co</sub> calibration spectrum is used to measure and correct the width-energy dependence of the AvsE distribution. Second, we linearly correct for the correlation of AvsE with the drift time, measured using the 0−90% rise time $( \\Delta t _ { 0 - 9 0 } )$ . The effect of these improvements is an improved signal acceptance and a more accurate determination of the single-site acceptance at $Q _ { \\beta \\beta } ;$ based on 56<sub>Co</sub> studies performed after publication of Refs. [10, 35], the acceptance of the AvsE cut in those analyses was ∼84%.",
+  "bbox": [
+   511,
+   369,
+   924,
+   702
+  ],
+  "page_idx": 2
+ },
+ {
+  "type": "text",
+  "text": "Surface events very close to the point contact produce faster-rising waveforms than bulk events [42]. A cut value at high values of AvsE is selected to accept 98% of bulk events near $Q _ { \\beta \\beta }$ in the $^ { 2 2 8 } \\mathrm { T h }$ Compton-continuum from calibration data. This background cut was not applied in Refs. [10, 35], and relies on the improvements made to the AvsE parameter.",
+  "bbox": [
+   511,
+   702,
+   923,
+   809
+  ],
+  "page_idx": 2
+ },
+ {
+  "type": "text",
+  "text": "Alpha particles impinging on the passivated surface experience increased charge trapping and surface chargecollection effects that degrade their reconstructed energy, becoming an important source of background. Much of this charge is collected slowly, increasing the slope of the falling tail of the waveforms relative to bulk events [42]. Delayed charge recovery (DCR) is a measure of this slope",
+  "bbox": [
+   511,
+   808,
+   923,
+   916
+  ],
+  "page_idx": 2
+ },
+ {
+  "type": "page_number",
+  "text": "4",
+  "bbox": [
+   908,
+   35,
+   921,
+   46
+  ],
+  "page_idx": 3
+ },
+ {
+  "type": "chart",
+  "img_path": "images/page_3_chart_1.jpg",
+  "content": "",
+  "chart_caption": [
+   "FIG. 1. The measured energy spectrum above 100 keV for the full enriched exposure after applying multiplicity and data cleaning cuts (dark gray), DCR, high-AvsE and LQ cuts (light gray), and the low-AvsE cut (red)."
+  ],
+  "chart_footnote": [],
+  "bbox": [
+   129,
+   85,
+   862,
+   281
+  ],
+  "page_idx": 3
+ },
+ {
+  "type": "text",
+  "text": "increase, and can be used for surface alpha rejection. The DCR cut is tuned using Compton-continuum events in 228<sub>Th</sub> calibration data to accept 99% of bulk events, assuming it is normally distributed, in the energy range of 2028 − 2050 keV bracketing $Q _ { \\beta \\beta }$ . Since previous data releases [10, 35], the DCR parameter has been refined to improve the stability of the parameter with energy and time, and a correction for linear correlations with drift time has been added.",
+  "bbox": [
+   82,
+   358,
+   492,
+   495
+  ],
+  "page_idx": 3
+ },
+ {
+  "type": "text",
+  "text": "Finally, events with a partial charge deposition in the transition layer between the n-type surfaces and the detector bulk experience energy degradation, and have waveforms with a slow-rise component. We calculated the Late Charge (LQ) parameter, which is the integral of uncollected charge after a waveform has reached 80% of its maximum value. The slow-rise component of these waveforms increases LQ, and we cut events that fall 5σ above the center of the parameter distribution. LQ is tuned using the 1592-keV DEP in 228<sub>Th</sub> calibration data, and is corrected for linear correlations with the drift time. The parameter acceptance is measured to be 99.3% using this same DEP, corrected for energy dependence using multiple DEPs in 56<sub>Co</sub> data.",
+  "bbox": [
+   82,
+   500,
+   492,
+   714
+  ],
+  "page_idx": 3
+ },
+ {
+  "type": "text",
+  "text": "Because the installed ICPC detectors are 2–3 times larger than PPC detectors, they experience greater charge trapping and diffusion effects. To achieve similar energy and PSD performance to the PPC detectors, further improvements to the algorithms are implemented. In place of $\\Delta t _ { 0 - 9 0 } ,$ , we estimate drift time using the effective mean rise time, calculated as the integral of uncollected charge from $t _ { 0 }$ until 1.5 µs later. Energy is calculated using a PZ correction and trapezoidal filter; these filters, however, are not optimized for charge trapping as in the PPC detectors. Instead, we correct for charge trapping by correcting the energy for correlations with drift time that are either quadratic or linear depending",
+  "bbox": [
+   82,
+   718,
+   492,
+   916
+  ],
+  "page_idx": 3
+ },
+ {
+  "type": "text",
+  "text": "on which achieved better resolution. The ICPC detectors have an exposure-weighted average energy resolution of $2 . 5 5 { \\pm } 0 . 0 9$ keV FWHM. Instead of $A v s E ,$ we calculate the ratio between A and $E \\; ( A / E )$ [43], and linear corrections for both drift time and energy are applied to this ratio. We cut on both low and high values of $A / E ,$ for multi-site and near-point-contact events, respectively. As a ratio, the width of $A / E$ increases rapidly at low energies and is only well understood for hits above 1 MeV, in contrast with AvsE; however, the improved drift time correction performs excellently near $Q _ { \\beta \\beta }$ , with only $4 . 7 6 \\pm 0 . 5 0 \\%$ of events in the inherently-multi-site 208<sub>Tl</sub> SEP at 2103 keV surviving. The DCR and LQ parameters are calculated similarly for ICPC and PPC detectors, applying corrections for linear correlations with effective mean rise time, rather than $\\Delta t _ { \\mathrm { 0 - 9 0 } }$ . The DCR parameter is additionally corrected for residual ADC nonlinearity which produces an energy dependent oscillation in the mean of the distribution.",
+  "bbox": [
+   511,
+   358,
+   923,
+   646
+  ],
+  "page_idx": 3
+ },
+ {
+  "type": "text",
+  "text": "The signal-efficiency for each PSD cut is measured using weekly calibrations, and averaged together for each full dataset. Because of the differences between PPC and ICPC detectors, signal-efficiencies are calculated separately for each using identical procedures to measure these values, except where noted. If a detector channel exhibits large instabilities between two calibrations, we reject its events for that period. Uncertainty estimates account for statistics and systematic effects due to variations in cut parameters between weekly calibrations, energy dependencies of the cuts, and simulated differences between the waveform populations used to measure the signal-efficiency and $0 \\nu \\beta \\beta$ events. The only difference applies to the low $A / E$ cut in ICPC detectors: no 56<sub>Co</sub> data is available for the ICPC detectors and thus no energywidth correction is applied to the parameter; instead, we reduce the signal acceptance from 90.2% to 85.2%, based",
+  "bbox": [
+   511,
+   658,
+   923,
+   916
+  ],
+  "page_idx": 3
+ },
+ {
+  "type": "page_number",
+  "text": "5",
+  "bbox": [
+   908,
+   35,
+   920,
+   47
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "text",
+  "text": "on the estimated shift in signal-acceptance for the uncorrected parameter in PPC data. The exposure-weighted averages of signal-efficiencies across all datasets are listed in Tab. I.",
+  "bbox": [
+   82,
+   66,
+   491,
+   127
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "text",
+  "text": "The total exposure for PPC and ICPC detectors of 71.1 kg yr is calculated by multiplying the full detector masses and the full livetime for each detector, after removing periods for which data from a detector are rejected. We compute the active exposure by subtracting sources of dead time, including 0.77% loss from periods of increased microphonic noise during LN dewar fills, 0.04% loss from the period of each muon veto cut, and 0.51% loss from retriggering dead time. Detector volume with incomplete charge collection within ∼1 mm of detector surfaces is also subtracted from active exposure. The fraction of active volume in PPC detectors is $9 2 . 0 _ { - 1 . 7 } ^ { + 1 . 3 } \\%$ , while the fraction in ICPC detectors is $9 0 . 9 _ { - 1 . 6 } ^ { + 1 . 2 } \\%$ . The upper uncertainty estimates account for measurement uncertainty, and the lower uncertainty estimates also incorporate possible growth in dead layers while detectors are warm, which is being further investigated. The total active exposure for PPC and ICPC detectors is $6 4 . 5 _ { - 1 . 2 } ^ { + 0 . 9 }$ kg yr. The active exposure from the datasets reported in Ref. [10] increased from 26.0 kg yr to 27.2 kg yr in PPC detectors for the current analysis, thanks to added livetime due to an improved understanding of the stability of PSD parameters and the inclusion of data that were previously rejected by automated procedures for having high noise but manually verified to have a near-threshold rate comparable to accepted runs.",
+  "bbox": [
+   82,
+   127,
+   492,
+   522
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "text",
+  "text": "Unblinding of data proceeded in a staged fashion with basic data quality assurance checks performed at each stage. No changes to analysis parameters or run selection were made after opening the energy window 1950–2350 keV which contains $Q _ { \\beta \\beta }$ Fig. 1 shows the energy spectrum, with the effect of cuts visible. The spectrum is dominated by $2 \\nu \\beta \\beta$ below $Q _ { \\beta \\beta }$ , and near $Q _ { \\beta \\beta }$ most events are removed by the various cuts. A background index is calculated using counts that pass all cuts within a 360-keV background estimation window, excluding ±5 keV around the 2039 keV Qββ-value and expected background gamma-rays at 2103 keV, 2118 keV and 2204 keV. The background rate within this 360-keV window is assumed to be flat. The surface cuts (DCR, high-AvsE and LQ) remove 85% of events in the background region. The multi-site cut (low-AvsE) removes 49% of the remaining events. The majority of surface events are removed by more than one of the surface cuts; still, each uniquely cuts a significant population of events. A parallel analysis using an interpretable boosted decision tree to leverage multi-variate correlations between these parameters achieves a similar result, with the potential for future background rejection [44].",
+  "bbox": [
+   82,
+   521,
+   492,
+   870
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "text",
+  "text": "After cuts, 153 events remain in the background estimation window, resulting in a background index of $1 6 . 6 _ { - 1 . 3 } ^ { + 1 . 4 } \\times 1 0 ^ { - 3 }$ cts/(FWHM kg yr). We also define a",
+  "bbox": [
+   83,
+   869,
+   492,
+   917
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "chart",
+  "img_path": "images/page_4_chart_5.jpg",
+  "content": "",
+  "chart_caption": [
+   "FIG. 2. The measured energy spectrum for the full enriched exposure in the range of 1950-2350 keV, after applying all background cuts. The 360-keV background estimation window excludes the shaded 10 keV windows around expected gamma lines in gray, and the 10 keV window around the 2039 keV $Q _ { \\beta \\beta }$ in blue. Lines are drawn representing the background index (green) and a peak at the 90% C.L. limit (blue)."
+  ],
+  "chart_footnote": [],
+  "bbox": [
+   518,
+   67,
+   911,
+   209
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "text",
+  "text": "low background dataset, excluding the first dataset taken with Module 1 from June 2015 through Oct. 2015 prior to the installation of the inner Cu shield. This low background dataset has an active exposure of 63.3 kg yr in PPC and ICPC detectors, and 142-events in the background estimation window, resulting in a background index of $1 5 . 7 _ { - 1 . 3 } ^ { + 1 . 4 } \\times 1 0 ^ { - 3 }$ cts/(FWHM kg yr). We measure a significant difference in the background index between Module $1 \\; ( 1 8 . 1 _ { - 1 . 7 } ^ { + 1 . 8 }   \\times   1 0 ^ { - 3 }$ cts/(FWHM kg yr)) and Module $2 ~ ( 8 . 7 _ { - 1 . 7 } ^ { + 2 . 0 } \\times 1 0 ^ { - 3 }$ cts/(FWHM kg yr)). The Majorana Demonstrator measures a higher background index than predicted by the initial assay-based projections of $\\bar { < } 2 . \\bar { 5 } \\times 1 0 ^ { - 3 }$ counts/(FWHM kg yr) [23]. Current evidence suggests that the main source of this excess is located far from the HPGe detectors, most likely near the interface of the Module 1 crossarm and cryostat. To better identify and measure this source, we are further analyzing possible background sources in a detailed model of the apparatus using the Geant4 [45] based package MaGe [46]. Upon unblinding the 10 keV window centered on 2039 keV, 4 events were observed, consistent with the background expectation. The events in the 1950 − 2350 keV window are shown in Fig. 2.",
+  "bbox": [
+   511,
+   350,
+   922,
+   699
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "text",
+  "text": "A lower half-life limit for 0νββ is calculated using",
+  "bbox": [
+   529,
+   698,
+   894,
+   714
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "equation",
+  "img_path": "images/page_4_equation_9.jpg",
+  "text": "T _ {1 / 2} > \\ln (2) \\frac {N T \\epsilon_ {t o t}}{S}\\tag{1}",
+  "text_format": "latex",
+  "bbox": [
+   642,
+   723,
+   918,
+   754
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "text",
+  "text": "where NT is the number of $^ { 7 6 } ($ <sub>Ge</sub> nuclei in the active mass, $\\epsilon _ { t o t }   =   0 . 7 8$ is the signal detection efficiency, and $S$ is the upper limit on the signal counts based on the observed data. A limit of $\\widetilde { T _ { 1 / 2 } > 8 . 3 \\times 1 0 ^ { 2 5 } }$ yr is derived using an unbinned, extended profile likelihood method implemented in RooStats [47, 48]; this is the same technique used for the limits in Refs. [10, 35]. Systematic uncertainties are included for the detection efficiency, exposure and peak shape, as listed in Tab. I. Because this limit is statistics dominated, these uncertainties have a",
+  "bbox": [
+   511,
+   762,
+   923,
+   916
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "page_number",
+  "text": "6",
+  "bbox": [
+   908,
+   35,
+   921,
+   47
+  ],
+  "page_idx": 5
+ },
+ {
+  "type": "text",
+  "text": "very small effect on the result. For this method, we use a 370-keV-wide fitting window, which includes the 360-keV background estimation window and the 10 keV window around 2039 keV. A 90% C.L. median sensitivity for exclusion of $T _ { 1 / 2 } > 8 . 1 \\times 1 0 ^ { 2 5 }$ yr is also derived using this construction.",
+  "bbox": [
+   83,
+   67,
+   492,
+   158
+  ],
+  "page_idx": 5
+ },
+ {
+  "type": "text",
+  "text": "Several additional statistical techniques were examined. The Feldman-Cousins technique [49] was implemented using a 3.8-keV-wide optimal region of interest (ROI) at $Q _ { \\beta \\beta }$ [36], with peak detection efficiency listed in Tab. I. This ROI contains 1 count, with an expectation of 1.52 background counts, producing a limit of $T _ { 1 / 2 }   >   7 . 2 \\times 1 0 ^ { 2 5 } ~ \\mathrm { y r }$ Two Bayesian analyses were implemented using Markov Chain Monte Carlo simulations performed with RooStats using the same likelihood function as for the frequentist result. Using a flat prior on $1 / T _ { 1 / 2 }$ we calculate a half-life limit of $7 . 0 \\times 1 0 ^ { 2 5 }$ yr at 90% C.I. Using the Jeffreys prior, flat on $1 / \\sqrt { T _ { 1 / 2 } }$ , we calculate a limit of $1 . 1 \\times 1 0 ^ { 2 6 }   \\mathrm { y r }$ at 90% C.I. A modified profile likelihood analysis using the more conservative $\\mathrm { C L } _ { S }$ method [50] to mitigate the effect of background down-fluctuations yields a limit of $6 . 4 \\times 1 0 ^ { 2 5 }$ yr at 90% C.L. The data required to perform a statistical analysis of the Majorana Demonstrator, including a full list of analysis parameters and events 370-keV fitting window, can be found in the Supplemental Materials [34].",
+  "bbox": [
+   83,
+   161,
+   492,
+   467
+  ],
+  "page_idx": 5
+ },
+ {
+  "type": "text",
+  "text": "To place limits on $m _ { \\beta \\beta }$ assuming light neutrino exchange, we apply matrix element $\\left( M _ { 0 \\nu } \\right)$ and phase space integral $( G _ { 0 \\nu } )$ calculations. We use a range of $M _ { 0 \\nu }$ values of $2 . 6 6 \\mathrm { ~ - ~ } 6 . 3 4$ [51–62], phase space factors $( G _ { 0 \\nu } )$ of $2 . 3 6   \\times   1 0 ^ { - 1 5 } / \\mathrm { y r }$ [63] or $\\mathrm { [ 2 . 3 7   \\times   1 0 ^ { - 1 5 } / y r }$ [64], and an effective axial weak coupling of $g _ { A } ^ { e f f } = 1 . 2 7$ for free nucleons [8]. Applying these to the limit of $T _ { 1 / 2 } >$ $8 . 3 \\times 1 0 ^ { 2 5 }$ , we calculate upper limits on $m _ { \\beta \\beta }$ in the range (113 − 269) meV. Fig. 3 shows this limit, along with allowed values of $m _ { \\beta \\beta }$ . These limits are subject to theoretical uncertainties on $M _ { 0 \\nu }$ and $g _ { A } ^ { e f f }$ [8].",
+  "bbox": [
+   82,
+   470,
+   492,
+   641
+  ],
+  "page_idx": 5
+ },
+ {
+  "type": "text",
+  "text": "The Majorana Demonstrator has completed measurements with its enriched detectors. Among $0 \\nu \\beta \\beta$ searches, the Demonstrator achieved the best energy resolution of ∼2.5 keV at $Q _ { \\beta \\beta }$ , including for the ICPC detectors that will be predominantly used in LEGEND [67]. For this result, we have also demonstrated several new experimental techniques that will play an important role in future efforts, including the use of $^ { 5 6 } \\mathrm { C o }$ to correct energy dependent systematics in PSD cuts and the introduction of a novel PSD cut that is sensitive to events with charge deposition in n-type surfaces. Through advances in ultra-low background materials, the Demonstrator also achieved the second lowest background index normalized for energy resolution; only GERDA achieved lower backgrounds by immersing HPGe detectors in an active liquid argon shield [11]. The techniques used by both experiments to achieve low backgrounds are complementary and will be combined by LEGEND to",
+  "bbox": [
+   82,
+   643,
+   492,
+   916
+  ],
+  "page_idx": 5
+ },
+ {
+  "type": "chart",
+  "img_path": "images/page_5_chart_5.jpg",
+  "content": "",
+  "chart_caption": [
+   "FIG. 3. Allowed values of $m _ { \\beta \\beta }$ for varying masses of the lightest neutrino eigenstate in the normal and inverted mass orderings, using the best-fit values of neutrino oscillation parameters [65]. Upper limits on $m _ { \\beta \\beta }$ at 90% C.I. are calculated using half-life limits for the Majorana Demonstrator (this work), GERDA [11], KamLAND-Zen [12], EXO-200 [13], and CUORE [14], using nuclear matrix elements calculated using the Quasi-Random Phase Approximation (QRPA) [54–57, 66], Shell Model (SM) [51–53], Interacting Boson Model (IBM) [61, 62], and Energy Density Functional (EDF) theory [58–60]. The light gray shaded region shows the range of 90% C.I. upper limits reported in this work, and the dark gray shows values of $m _ { \\beta \\beta }$ excluded for all nuclear matrix elements."
+  ],
+  "chart_footnote": [],
+  "bbox": [
+   521,
+   71,
+   909,
+   297
+  ],
+  "page_idx": 5
+ },
+ {
+  "type": "text",
+  "text": "achieve lower background rates than either experiment individually. This has enabled Majorana to achieve limits comparable to other $0 \\nu \\beta \\beta$ experiments, even with a comparatively small exposure. Since both the Majorana Demonstrator and GERDA achieved quasi-background free spectra near $Q _ { \\beta \\beta }$ , a combined analysis would measure a limit near the sum of the individual limits.",
+  "bbox": [
+   512,
+   521,
+   922,
+   642
+  ],
+  "page_idx": 5
+ },
+ {
+  "type": "text",
+  "text": "The authors appreciate the technical assistance of S. Adair, J.F. Amsbaugh, J. Bell, T.H. Burritt, G. Capps, K. Carney, J. Cox, R. Daniels, L. DeBraeckeleer, C. Dunagan, G.C. Harper, C. Havener, G. Holman, R. Hughes, K. Jeskie, K. Lagergren, D. Lee, O. Loken, M. Middlebook, A. Montoya, A.W. Myers, D. Peterson, D. Reid, L. Rodriguez, H. Salazar, A.R. Smith, G. Swift, J. Thompson, P. Thompson, M. Turqueti, C. Tysor, T.D. Van Wechel, R. Varland, T. Williams, R. Witharm, and H. Yaver. This material is based upon work supported by the U.S. Department of Energy, Office of Science, Office of Nuclear Physics under contract / award numbers DE-AC02-05CH11231, DE-AC05-00OR22725, DE-AC05-76RL0130, DE-FG02-97ER41020, DE-FG02-97ER41033, DE-FG02-97ER41041, DE-SC0012612, DE-SC0014445, DE-SC0018060, DE-SC0022339, and LAN-LEM77/LANLEM78. We acknowledge support from the Particle Astrophysics Program and Nuclear Physics",
+  "bbox": [
+   511,
+   643,
+   923,
+   916
+  ],
+  "page_idx": 5
+ },
+ {
+  "type": "page_number",
+  "text": "7",
+  "bbox": [
+   908,
+   35,
+   920,
+   48
+  ],
+  "page_idx": 6
+ },
+ {
+  "type": "text",
+  "text": "Program of the National Science Foundation through grant numbers MRI-0923142, PHY-1003399, PHY-1102292, PHY-1206314, PHY-1614611, PHY-1812409, PHY-1812356, PHY-2111140, and PHY-2209530. We gratefully acknowledge the support of the Laboratory Directed Research & Development (LDRD) program at Lawrence Berkeley National Laboratory for this work. We gratefully acknowledge the support of the U.S. Department of Energy through the Los Alamos National Laboratory LDRD Program and through the Pacific Northwest National Laboratory LDRD Program for this work. We gratefully acknowledge the support of the South Dakota Board of Regents Competitive Research Grant. We acknowledge the support of the Natural Sciences and Engineering Research Council of Canada, funding reference number SAPIN-2017-00023, and from the Canada Foundation for Innovation John R. Evans Leaders Fund. This research used resources provided by the Oak Ridge Leadership Computing Facility at Oak Ridge National Laboratory and by the National Energy Research Scientific Computing Center at Lawrence Berkeley National Laboratory, a U.S. Department of Energy Office of Science User Facility. We thank our hosts and colleagues at the Sanford Underground Research Facility for their support.",
+  "bbox": [
+   82,
+   65,
+   492,
+   446
+  ],
+  "page_idx": 6
+ },
+ {
+  "type": "list",
+  "sub_type": "ref_text",
+  "list_items": [
+   "Present address: SLAC National Accelerator Laboratory, Menlo Park, CA 94025, USA",
+   "† Present address: Duke University, Durham, NC 27708",
+   "‡ Present address: Universität Hamburg, Institut für Experimentalphysik, Hamburg, Germany",
+   "§ Present address: Jet Propulsion Laboratory, California Institute of Technology, Pasadena, CA 91109, USA",
+   "[1] M. Agostini, G. Benato, J. Detwiler, J. Menéndez, and F. Vissani, [Toward the discovery of matter creation with neutrinoless double-beta decay](https://doi.org/10.48550/arXiv.2202.01787) (2022), [arXiv:2202.01787 \\[hep-ex\\]](https://arxiv.org/abs/2202.01787).",
+   "[2] M. J. Dolinski, A. W. Poon, and W. Rodejohann, [Ann. Rev. Nucl. Part. Sci. 69, 219 (2019)](https://doi.org/10.1146/annurev-nucl-101918-023407).",
+   "[3] A. S. Barabash, [Int. J. Mod. Phys. A 33, 1843001 (2018)](https://doi.org/10.1142/S0217751X18430017).",
+   "[4] J. D. Vergados, H. Ejiri, and F. Šimkovic, [Int. J. Mod. Phys. E 25, 1630007 (2016)](https://doi.org/10.1142/S0218301316300071).",
+   "[5] S. Dell’Oro, S. Marcocci, M. Viel, and F. Vissani, [Advances in High Energy Physics 2016, 2162659 (2016)](https://doi.org/10.1155/2016/2162659).",
+   "[6] M. Fukugita and T. Yanagida, [Phys. Lett. B 174, 45 (1986)](https://doi.org/https://doi.org/10.1016/0370-2693%2886%2991126-3).",
+   "[7] J. Engel and J. Menéndez, [Rep. Prog. Phys. 80, 046301 (2017)](https://doi.org/10.1088/1361-6633/aa5bc5).",
+   "[8] H. Ejiri, J. Suhonen, and K. Zuber, [Phys. Rep. 797, 1 (2019)](https://doi.org/https://doi.org/10.1016/j.physrep.2018.12.001).",
+   "[9] A. Barabash, [Universe 6, 159 (2020)](https://doi.org/10.3390/universe6100159).",
+   "[10] S. I. Alvis et al. (Majorana Collaboration), [Phys. Rev. C 100, 025501 (2019)](https://doi.org/10.1103/PhysRevC.100.025501).",
+   "[11] M. Agostini et al. (GERDA Collaboration), [Phys. Rev. Lett. 125, 252502 (2020)](https://doi.org/10.1103/PhysRevLett.125.252502).",
+   "[12] S. Abe et al. (KamLAND-Zen), [First Search for the Majorana Nature of Neutrinos in the Inverted Mass Ordering](https://doi.org/10.48550/arXiv.2203.02139)",
+   "[Region with KamLAND-Zen](https://doi.org/10.48550/arXiv.2203.02139) (2022), [arXiv:2203.02139 \\[hep-ex\\]](https://arxiv.org/abs/2203.02139).",
+   "[13] G. Anton et al. (EXO-200 Collaboration), [Phys. Rev. Lett. 123, 161802 (2019)](https://doi.org/10.1103/PhysRevLett.123.161802).",
+   "[14] D. Q. Adams et al. (CUORE), [Nature 604, 53 (2022)](https://doi.org/10.1038/s41586-022-04497-4), [arXiv:2104.06906 \\[nucl-ex\\]](https://arxiv.org/abs/2104.06906).",
+   "[15] N. Abgrall et al. (Majorana Collaboration), [Adv. High Energy Phys. 2014, 365432 (2014)](https://doi.org/10.1155/2014/365432).",
+   "[16] F. T. Avignone III and S. R. Elliott, [Frontiers in Physics 7, 6 (2019)](https://doi.org/10.3389/fphy.2019.00006).",
+   "[17] E. Hoppe, C. Aalseth, O. Farmer, T. Hossbach, M. Liezers, H. Miley, N. Overman, and J. Reeves, [Nucl. Instrum. Methods Phys. Res. A 764, 116 (2014)](https://doi.org/https://doi.org/10.1016/j.nima.2014.06.082).",
+   "[18] N. Abgrall et al. (Majorana Collaboration), [J Instrum. 17, T05003 (2022)](https://doi.org/10.1088/1748-0221/17/05/t05003).",
+   "[19] N. Abgrall et al. (Majorana Collaboration), [Nucl. Instrum. Methods Phys. Res. A 823, 83 (2016)](https://doi.org/https://doi.org/10.1016/j.nima.2016.04.006).",
+   "[20] W. Bugg, Y. Efremenko, and S. Vasilyev, [Nucl. Instrum. Methods Phys. Res. A 758, 91 (2014)](https://doi.org/https://doi.org/10.1016/j.nima.2014.05.055).",
+   "[21] N. Abgrall et al. (Majorana Collaboration), [Nucl. Instrum. Methods Phys. Res. A 872, 16 (2017)](https://doi.org/https://doi.org/10.1016/j.nima.2017.08.005).",
+   "[22] J. Heise, [Journal of Physics: Conference Series 606, 012015 (2015)](https://doi.org/10.1088/1742-6596/606/1/012015).",
+   "[23] N. Abgrall et al. (Majorana Collaboration), [Nucl. Instrum. Methods Phys. Res. A 828, 22 (2016)](https://doi.org/https://doi.org/10.1016/j.nima.2016.04.070).",
+   "[24] N. Abgrall et al. (Majorana Collaboration), [Nucl. Instrum. Methods Phys. Res. A 779, 52 (2015)](https://doi.org/https://doi.org/10.1016/j.nima.2015.01.001).",
+   "[25] P. Luke, F. Goulding, N. Madden, and R. Pehl, [IEEE Transactions on Nuclear Science 36, 926 (1989)](https://doi.org/10.1109/23.34577).",
+   "[26] P. S. Barbeau, J. I. Collar, and O. Tench, [J. Cosmol. Astropart. Phys. 2007 (09), 009](https://doi.org/10.1088/1475-7516/2007/09/009).",
+   "[27] Canberra Industries Inc. (now Mirion Technologies), 800 Research Parkway Meriden, CT 06450, [https://www.mirion.com/products/bege-broad-energy-germanium-detectors](https://www.mirion.com/products/bege-broad-energy-germanium-detectors).",
+   "[28] R. Cooper, D. Radford, P. Hausladen, and K. Lagergren, [Nucl. Instrum. Methods Phys. Res. A 665, 25 (2011)](https://doi.org/https://doi.org/10.1016/j.nima.2011.10.008).",
+   "[29] N. Abgrall et al. (LEGEND Collaboration), [AIP Conf. Proc. 1894, 020027 (2017)](https://doi.org/10.1063/1.5007652).",
+   "[30] K. Vetter, A. Kuhn, I. Lee, R. Clark, M. Cromaz, M. Deleplanque, R. Diamond, P. Fallon, G. Lane, A. Macchiavelli, M. Maier, F. Stephens, C. Svensson, and H. Yaver, [Nucl. Instrum. Methods Phys. Res. A 452, 105 (2000)](https://doi.org/https://doi.org/10.1016/S0168-9002%2800%2900431-9).",
+   "[31] J. Anderson, R. Brito, D. Doering, T. Hayden, B. Holmes, J. Joseph, H. Yaver, and S. Zimmermann, [IEEE Trans. Nucl. Sci. 56, 258 (2009)](https://doi.org/10.1109/TNS.2008.2009444).",
+   "[32] S. I. Alvis et al. (Majorana Collaboration), [Phys. Rev. D 99, 072004 (2019)](https://doi.org/10.1103/PhysRevD.99.072004).",
+   "[33] I. J. Arnquist et al. (Majorana Collaboration), [Exper](https://doi.org/10.1103/PhysRevC.105.064610)imental study of $^ { 1 3 } \\mathrm { C } \\dot { ( } \\alpha , n ) ^ { 1 6 } \\mathrm { O }$ [reactions in the majorana demonstrator calibration data](https://doi.org/10.1103/PhysRevC.105.064610) (2022).",
+   "[34] See Supplemental Material at [URL will be inserted by publisher] for the data used in the presented Majorana Demonstrator statistical analysis.",
+   "[35] C. E. Aalseth et al. (Majorana Collaboration), [Phys. Rev. Lett. 120, 132502 (2018)](https://doi.org/10.1103/PhysRevLett.120.132502).",
+   "[36] M. Agostini, G. Benato, and J. A. Detwiler, [Phys. Rev. D 96, 053001 (2017)](https://doi.org/10.1103/PhysRevD.96.053001).",
+   "[37] N. Abgrall et al. (Majorana Collaboration), [IEEE Trans. Nucl. Sci. 68, 359 (2021)](https://doi.org/10.1109/TNS.2020.3043671).",
+   "[38] N. Abgrall et al. (Majorana Collaboration), [Charge Trapping and Energy Performance of the Majorana Demonstrator](https://doi.org/10.48550/ARXIV.2208.03424) (2022), [arXiv:2208.03424 \\[ins-det\\]](https://arxiv.org/abs/2208.03424)."
+  ],
+  "bbox": [
+   86,
+   67,
+   921,
+   914
+  ],
+  "page_idx": 6
+ },
+ {
+  "type": "page_number",
+  "text": "8",
+  "bbox": [
+   908,
+   35,
+   920,
+   47
+  ],
+  "page_idx": 7
+ },
+ {
+  "type": "list",
+  "sub_type": "ref_text",
+  "list_items": [
+   "[39] N. Abgrall et al. (Majorana Collaboration), (2022), (in preparation).",
+   "[40] I. J. Arnquist et al. (Majorana Collaboration), [Phys. Rev. C 105, 014617 (2022)](https://doi.org/10.1103/PhysRevC.105.014617).",
+   "[41] S. I. Alvis et al. (Majorana Collaboration), [Phys. Rev. C 99, 065501 (2019)](https://doi.org/10.1103/PhysRevC.99.065501).",
+   "[42] I. J. Arnquist et al. (Majorana Collaboration), [Eur. Phys. J. C 82, 226 (2022)](https://doi.org/10.1140/epjc/s10052-022-10161-y).",
+   "[43] D. Budjáš, M. B. Heider, O. Chkvorets, N. Khanbekov, and S. Schönert, [J Instrum. 4, P10007 (2009)](https://doi.org/10.1088/1748-0221/4/10/p10007).",
+   "[44] I. J. Arnquist et al. (Majorana Collaboration), [Learning physics from the machine: An interpretable boosted decision tree analysis for the majorana demonstrator](https://doi.org/10.48550/ARXIV.2207.10710) (2022), [arXiv:2207.10710 \\[physics.data-an\\]](https://arxiv.org/abs/2207.10710).",
+   "[45] S. Agostinelli et al., [Nucl. Instrum. Methods Phys. Res. A 506, 250 (2003)](https://doi.org/https://doi.org/10.1016/S0168-9002%2803%2901368-8).",
+   "[46] M. Boswell et al., [IEEE Trans. Nucl. Sci. 58, 1212 (2011)](https://doi.org/10.1109/TNS.2011.2144619).",
+   "[47] W. Verkerke and D. Kirkby, The RooFit toolkit for data modeling (2003), [arXiv:physics/0306116 \\[physics.dataan\\]](https://arxiv.org/abs/physics/0306116).",
+   "[48] G. Schott (RooStats Team), in [PHYSTAT 2011](https://doi.org/10.5170/CERN-2011-006.199) (CERN, Geneva, 2011) pp. 199–208, [arXiv:1203.1547 \\[physics.data-an\\]](https://arxiv.org/abs/1203.1547).",
+   "[49] G. J. Feldman and R. D. Cousins, [Phys. Rev. D 57, 3873 (1998)](https://doi.org/10.1103/PhysRevD.57.3873).",
+   "[50] A. L. Read, CERN-OPEN-2000-205 [10.5170/CERN-2000-005.81](https://doi.org/10.5170/CERN-2000-005.81) (2000).",
+   "[51] J. Menéndez, [J. Phys. G: Nucl. Part. Phys. 45, 014003 (2017)](https://doi.org/10.1088/1361-6471/aa9bd4).",
+   "[52] M. Horoi and A. Neacsu, [Phys. Rev. C 93, 024308 (2016)](https://doi.org/10.1103/PhysRevC.93.024308).",
+   "[53] L. Coraggio, A. Gargano, N. Itaco, R. Mancino, and F. Nowacki, [Phys. Rev. C 101, 044315 (2020)](https://doi.org/10.1103/PhysRevC.101.044315).",
+   "[54] M. T. Mustonen and J. Engel, [Phys. Rev. C 87, 064302 (2013)](https://doi.org/10.1103/PhysRevC.87.064302).",
+   "[55] J. Hyvärinen and J. Suhonen, [Phys. Rev. C 91, 024613 (2015)](https://doi.org/10.1103/PhysRevC.91.024613).",
+   "[56] F. Šimkovic, A. Smetana, and P. Vogel, [Phys. Rev. C 98, 064325 (2018)](https://doi.org/10.1103/PhysRevC.98.064325).",
+   "[57] D.-L. Fang, A. Faessler, and F. Šimkovic, [Phys. Rev. C 97, 045503 (2018)](https://doi.org/10.1103/PhysRevC.97.045503).",
+   "[58] T. R. Rodríguez and G. Martínez-Pinedo, [Phys. Rev. Lett. 105, 252503 (2010)](https://doi.org/10.1103/PhysRevLett.105.252503).",
+   "[59] N. L. Vaquero, T. R. Rodríguez, and J. L. Egido, [Phys. Rev. Lett. 111, 142501 (2013)](https://doi.org/10.1103/PhysRevLett.111.142501).",
+   "[60] L. S. Song, J. M. Yao, P. Ring, and J. Meng, [Phys. Rev. C 95, 024305 (2017)](https://doi.org/10.1103/PhysRevC.95.024305).",
+   "[61] J. Barea, J. Kotila, and F. Iachello, [Phys. Rev. C 91, 034304 (2015)](https://doi.org/10.1103/PhysRevC.91.034304).",
+   "[62] F. F. Deppisch, L. Graf, F. Iachello, and J. Kotila, [Phys. Rev. D 102, 095016 (2020)](https://doi.org/10.1103/PhysRevD.102.095016).",
+   "[63] J. Kotila and F. Iachello, [Phys. Rev. C 85, 034316 (2012)](https://doi.org/10.1103/PhysRevC.85.034316).",
+   "[64] M. Mirea, T. Pahomi, and S. Stoica, [Rom. Rep. Phys. 67, 872 (2015)](http://www.rrp.infim.ro/2015_67_3/A12.pdf).",
+   "[65] R. L. Workman and Others (Particle Data Group), [PTEP 2022, 083C01 (2022)](https://doi.org/10.1093/ptep/ptac097).",
+   "[66] J. Terasaki, [Phys. Rev. C 102, 044303 (2020)](https://doi.org/10.1103/PhysRevC.102.044303).",
+   "[67] N. Abgrall et al. (LEGEND Collaboration), [LEGEND-1000 preconceptual design report](https://doi.org/10.48550/arXiv.2107.11462) (2021), [arXiv:2107.11462 \\[nucl-ex\\]](https://arxiv.org/abs/2107.11462)."
+  ],
+  "bbox": [
+   86,
+   67,
+   921,
+   465
+  ],
+  "page_idx": 7
+ }
+]

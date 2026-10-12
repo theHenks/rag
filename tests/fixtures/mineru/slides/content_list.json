@@ -1,0 +1,1603 @@
+[
+ {
+  "type": "header",
+  "text": "Dip. Interateneo di Fisica Università di Bari",
+  "bbox": [
+   81,
+   27,
+   154,
+   127
+  ],
+  "page_idx": 0
+ },
+ {
+  "type": "header",
+  "text": "INFN Istituto Nazionale di Fisica Nucleare",
+  "bbox": [
+   232,
+   41,
+   332,
+   127
+  ],
+  "page_idx": 0
+ },
+ {
+  "type": "header",
+  "text": "Smtm Dip. di Matematica e Fisica Università del Salento",
+  "bbox": [
+   409,
+   60,
+   492,
+   127
+  ],
+  "page_idx": 0
+ },
+ {
+  "type": "text",
+  "text": "NOW 2026 Neutrino Oscillation Workshop",
+  "text_level": 1,
+  "bbox": [
+   78,
+   168,
+   495,
+   317
+  ],
+  "page_idx": 0
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_0_image_4.jpg",
+  "image_caption": [],
+  "image_footnote": [],
+  "bbox": [
+   84,
+   348,
+   491,
+   901
+  ],
+  "page_idx": 0
+ },
+ {
+  "type": "text",
+  "text": "Otranto (Lecce, Italy), August 31 - September 6, 2026",
+  "bbox": [
+   79,
+   943,
+   497,
+   974
+  ],
+  "page_idx": 0
+ },
+ {
+  "type": "text",
+  "text": "Welcome to Otranto ! Welcome to NOW 2026 !",
+  "text_level": 1,
+  "bbox": [
+   598,
+   143,
+   910,
+   619
+  ],
+  "page_idx": 0
+ },
+ {
+  "type": "text",
+  "text": "**Antonio Surdo on behalf of the LOC**",
+  "bbox": [
+   694,
+   875,
+   964,
+   956
+  ],
+  "page_idx": 0
+ },
+ {
+  "type": "text",
+  "text": "A brief history of NOW",
+  "text_level": 2,
+  "bbox": [
+   27,
+   32,
+   498,
+   92
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "After the claim of neutrino oscillations (Takayama Conference, June 1998)",
+  "bbox": [
+   26,
+   135,
+   958,
+   177
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "✓ **1st Neutrino Oscillation Workshop**",
+  "bbox": [
+   18,
+   203,
+   465,
+   243
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "**in Amsterdam (September 1998)**",
+  "bbox": [
+   46,
+   245,
+   274,
+   325
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_1_image_4.jpg",
+  "image_caption": [],
+  "image_footnote": [],
+  "bbox": [
+   277,
+   251,
+   470,
+   425
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "ariv > hep-ph > arXiv:hep-ph/9906251",
+  "text_level": 2,
+  "bbox": [
+   474,
+   199,
+   679,
+   233
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "High Energy Physics – Phenomenology",
+  "bbox": [
+   479,
+   241,
+   654,
+   260
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "Summary of the NOW'98 Phenomenology Working Group",
+  "text_level": 2,
+  "bbox": [
+   479,
+   279,
+   847,
+   303
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "Summary of the Phenomenology Working Group at the Europhysics Neutrino Oscillation Workshop (NOW'98), 7-9 September 1998, Amsterdam.",
+  "bbox": [
+   488,
+   334,
+   996,
+   352
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "✓ **Prof. Gianluigi Fogli suggested to continue with the NOW series as a meeting of experimental and theoretical physicists**",
+  "bbox": [
+   18,
+   456,
+   898,
+   539
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "✓ **Since 2000 all NOW editions were in Apulia, organized by Bari and Lecce INFN Sections, and Bari and Salento Universities**",
+  "bbox": [
+   18,
+   575,
+   582,
+   698
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_1_image_11.jpg",
+  "image_caption": [],
+  "image_footnote": [
+   "Dip. Interateneo di Fisica Università di Bari"
+  ],
+  "bbox": [
+   608,
+   563,
+   689,
+   660
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_1_image_13.jpg",
+  "image_caption": [],
+  "image_footnote": [
+   "Istituto Nazionale di Fisica Nucleare"
+  ],
+  "bbox": [
+   709,
+   563,
+   841,
+   697
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_1_image_15.jpg",
+  "image_caption": [],
+  "image_footnote": [
+   "Dip. di Matematica e Fisica Università del Salento"
+  ],
+  "bbox": [
+   857,
+   573,
+   984,
+   641
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "✓ **Proceedings**",
+  "bbox": [
+   18,
+   737,
+   195,
+   775
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "**NOW 2000-2014 published on Nucl. Physics B (Proc. Suppl.)**",
+  "bbox": [
+   74,
+   775,
+   863,
+   816
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "**NOW 2016-2024 published on Proc. of Science (pos.sissa.it)**",
+  "bbox": [
+   74,
+   817,
+   865,
+   857
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "✓ **This is the 13th NOW conference**",
+  "bbox": [
+   18,
+   887,
+   465,
+   925
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "text",
+  "text": "**Proceedings will be published on Proceedings of Science**",
+  "bbox": [
+   104,
+   927,
+   790,
+   969
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "page_number",
+  "text": "2",
+  "bbox": [
+   909,
+   943,
+   923,
+   965
+  ],
+  "page_idx": 1
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_2_image_0.jpg",
+  "image_caption": [],
+  "image_footnote": [],
+  "bbox": [
+   2,
+   1,
+   992,
+   995
+  ],
+  "page_idx": 2
+ },
+ {
+  "type": "text",
+  "text": "To the memory of ...",
+  "text_level": 2,
+  "bbox": [
+   61,
+   39,
+   534,
+   107
+  ],
+  "page_idx": 3
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_3_image_1.jpg",
+  "image_caption": [],
+  "image_footnote": [
+   "Paolo Strolin (Napoli University, INFN)"
+  ],
+  "bbox": [
+   42,
+   145,
+   330,
+   421
+  ],
+  "page_idx": 3
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_3_image_3.jpg",
+  "image_caption": [],
+  "image_footnote": [
+   "Gianpaolo Bellini (Milano University, INFN)",
+   "Todor Stanev (University of Delaware, USA)"
+  ],
+  "bbox": [
+   310,
+   430,
+   591,
+   694
+  ],
+  "page_idx": 3
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_3_image_6.jpg",
+  "image_caption": [],
+  "image_footnote": [],
+  "bbox": [
+   650,
+   613,
+   895,
+   974
+  ],
+  "page_idx": 3
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_4_image_0.jpg",
+  "image_caption": [],
+  "image_footnote": [
+   "2006"
+  ],
+  "bbox": [
+   17,
+   24,
+   242,
+   241
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_4_image_2.jpg",
+  "image_caption": [],
+  "image_footnote": [],
+  "bbox": [
+   17,
+   299,
+   186,
+   619
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_4_image_3.jpg",
+  "image_caption": [],
+  "image_footnote": [
+   "2008",
+   "2004"
+  ],
+  "bbox": [
+   37,
+   693,
+   276,
+   915
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_4_image_6.jpg",
+  "image_caption": [],
+  "image_footnote": [],
+  "bbox": [
+   333,
+   22,
+   505,
+   422
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_4_image_7.jpg",
+  "image_caption": [],
+  "image_footnote": [
+   "2014",
+   "2010",
+   "2012"
+  ],
+  "bbox": [
+   276,
+   446,
+   436,
+   736
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_4_image_11.jpg",
+  "image_caption": [],
+  "image_footnote": [],
+  "bbox": [
+   768,
+   21,
+   985,
+   254
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_4_image_12.jpg",
+  "image_caption": [],
+  "image_footnote": [],
+  "bbox": [
+   523,
+   205,
+   752,
+   419
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_4_image_13.jpg",
+  "image_caption": [],
+  "image_footnote": [
+   "2016"
+  ],
+  "bbox": [
+   465,
+   576,
+   650,
+   928
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_4_image_15.jpg",
+  "image_caption": [],
+  "image_footnote": [
+   "2022",
+   "2018"
+  ],
+  "bbox": [
+   760,
+   354,
+   993,
+   577
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_4_image_18.jpg",
+  "image_caption": [],
+  "image_footnote": [
+   "2024"
+  ],
+  "bbox": [
+   715,
+   608,
+   878,
+   958
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "page_number",
+  "text": "5",
+  "bbox": [
+   911,
+   943,
+   923,
+   965
+  ],
+  "page_idx": 4
+ },
+ {
+  "type": "text",
+  "text": "NOW 2026 \"Escaping the neutrino maze\"",
+  "text_level": 1,
+  "bbox": [
+   650,
+   73,
+   945,
+   377
+  ],
+  "page_idx": 5
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_5_image_1.jpg",
+  "image_caption": [],
+  "image_footnote": [],
+  "bbox": [
+   21,
+   77,
+   631,
+   860
+  ],
+  "page_idx": 5
+ },
+ {
+  "type": "text",
+  "text": ". Trying to reveal the hidden neutrino properties through different/interconnected approaches in particle physics, astrophysics, cosmology …",
+  "bbox": [
+   646,
+   553,
+   992,
+   869
+  ],
+  "page_idx": 5
+ },
+ {
+  "type": "text",
+  "text": "NOW 2026 \"Escaping the neutrino maze\"",
+  "text_level": 1,
+  "bbox": [
+   652,
+   74,
+   945,
+   380
+  ],
+  "page_idx": 6
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_6_image_1.jpg",
+  "image_caption": [],
+  "image_footnote": [],
+  "bbox": [
+   22,
+   77,
+   632,
+   860
+  ],
+  "page_idx": 6
+ },
+ {
+  "type": "text",
+  "text": "Several paths, but … **only one way to escape the \"neutrino maze\"**",
+  "bbox": [
+   665,
+   479,
+   964,
+   675
+  ],
+  "page_idx": 6
+ },
+ {
+  "type": "text",
+  "text": "➢ Try to find it! .. You will also find a clue of the author (the name initials)",
+  "bbox": [
+   667,
+   713,
+   942,
+   913
+  ],
+  "page_idx": 6
+ },
+ {
+  "type": "text",
+  "text": "The inscriptions in the rose window",
+  "text_level": 2,
+  "bbox": [
+   56,
+   62,
+   826,
+   129
+  ],
+  "page_idx": 7
+ },
+ {
+  "type": "text",
+  "text": "➢ Standard three-neutrino oscillations",
+  "text_level": 2,
+  "bbox": [
+   86,
+   193,
+   714,
+   243
+  ],
+  "page_idx": 7
+ },
+ {
+  "type": "text",
+  "text": "• **Nicoletta Mauri**",
+  "bbox": [
+   173,
+   249,
+   382,
+   287
+  ],
+  "page_idx": 7
+ },
+ {
+  "type": "text",
+  "text": "• **Yufeng Li**",
+  "bbox": [
+   173,
+   293,
+   306,
+   334
+  ],
+  "page_idx": 7
+ },
+ {
+  "type": "text",
+  "text": "➢ Beyond the standard framework",
+  "text_level": 2,
+  "bbox": [
+   286,
+   388,
+   847,
+   441
+  ],
+  "page_idx": 7
+ },
+ {
+  "type": "text",
+  "text": "• **Lesya Shchutska**",
+  "bbox": [
+   369,
+   445,
+   586,
+   484
+  ],
+  "page_idx": 7
+ },
+ {
+  "type": "text",
+  "text": "**Alessio Caminata**",
+  "bbox": [
+   369,
+   489,
+   595,
+   528
+  ],
+  "page_idx": 7
+ },
+ {
+  "type": "text",
+  "text": "➢ Masses, states and interactions",
+  "text_level": 2,
+  "bbox": [
+   87,
+   586,
+   643,
+   634
+  ],
+  "page_idx": 7
+ },
+ {
+  "type": "text",
+  "text": "**Elena Ferri**",
+  "bbox": [
+   173,
+   641,
+   325,
+   678
+  ],
+  "page_idx": 7
+ },
+ {
+  "type": "text",
+  "text": "• **Xianguo Lu**",
+  "bbox": [
+   173,
+   685,
+   329,
+   725
+  ],
+  "page_idx": 7
+ },
+ {
+  "type": "text",
+  "text": "➢ Particle physics from sky and cosmos",
+  "text_level": 2,
+  "bbox": [
+   286,
+   780,
+   928,
+   833
+  ],
+  "page_idx": 7
+ },
+ {
+  "type": "text",
+  "text": "**Damiano F. Fiorillo**",
+  "bbox": [
+   369,
+   836,
+   613,
+   875
+  ],
+  "page_idx": 7
+ },
+ {
+  "type": "text",
+  "text": "• **Silvia Manconi**",
+  "bbox": [
+   370,
+   880,
+   567,
+   919
+  ],
+  "page_idx": 7
+ },
+ {
+  "type": "page_number",
+  "text": "8",
+  "bbox": [
+   964,
+   944,
+   976,
+   965
+  ],
+  "page_idx": 7
+ },
+ {
+  "type": "text",
+  "text": "Workshop organization (I)",
+  "text_level": 2,
+  "bbox": [
+   180,
+   39,
+   820,
+   117
+  ],
+  "page_idx": 8
+ },
+ {
+  "type": "text",
+  "text": "**8:45/9:00 - 12.00 in Plenary Room**",
+  "bbox": [
+   127,
+   157,
+   524,
+   196
+  ],
+  "page_idx": 8
+ },
+ {
+  "type": "text",
+  "text": "**1 plenary session for each topic and an extra session**",
+  "bbox": [
+   128,
+   205,
+   789,
+   249
+  ],
+  "page_idx": 8
+ },
+ {
+  "type": "text",
+  "text": "➢ **Standard three-neutrino oscillations Tuesday 1 Chair: Manfred Lindner**",
+  "bbox": [
+   177,
+   281,
+   708,
+   407
+  ],
+  "page_idx": 8
+ },
+ {
+  "type": "text",
+  "text": "➢ **Beyond the standard framework Wednesday 2 Chair: Barbara Ricci**",
+  "bbox": [
+   177,
+   422,
+   652,
+   549
+  ],
+  "page_idx": 8
+ },
+ {
+  "type": "text",
+  "text": "➢ **Escaping the neutrino maze (extra session) Thursday 3 Chair: Georg Raffelt**",
+  "bbox": [
+   177,
+   564,
+   801,
+   692
+  ],
+  "page_idx": 8
+ },
+ {
+  "type": "text",
+  "text": "➢ **Masses, states and interactions Friday 4 Chair: Piera Sapienza**",
+  "bbox": [
+   177,
+   709,
+   648,
+   835
+  ],
+  "page_idx": 8
+ },
+ {
+  "type": "text",
+  "text": "➢ **Particle physics from sky and cosmos Saturday 5 Chair: Gianluigi Fogli**",
+  "bbox": [
+   177,
+   849,
+   721,
+   976
+  ],
+  "page_idx": 8
+ },
+ {
+  "type": "page_number",
+  "text": "9",
+  "bbox": [
+   910,
+   944,
+   922,
+   965
+  ],
+  "page_idx": 8
+ },
+ {
+  "type": "text",
+  "text": "Workshop organization (II)",
+  "text_level": 2,
+  "bbox": [
+   168,
+   43,
+   834,
+   120
+  ],
+  "page_idx": 9
+ },
+ {
+  "type": "text",
+  "text": "12:00 – 16:00",
+  "text_level": 2,
+  "bbox": [
+   76,
+   166,
+   279,
+   207
+  ],
+  "page_idx": 9
+ },
+ {
+  "type": "text",
+  "text": "Daily break for lunch and/or beach",
+  "text_level": 2,
+  "bbox": [
+   124,
+   254,
+   609,
+   301
+  ],
+  "page_idx": 9
+ },
+ {
+  "type": "text",
+  "text": "• **Lunch box available**",
+  "bbox": [
+   123,
+   333,
+   386,
+   373
+  ],
+  "page_idx": 9
+ },
+ {
+  "type": "text",
+  "text": "(to be booked by 8pm the day before)",
+  "bbox": [
+   127,
+   376,
+   522,
+   416
+  ],
+  "page_idx": 9
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_9_image_5.jpg",
+  "image_caption": [],
+  "image_footnote": [],
+  "bbox": [
+   749,
+   171,
+   944,
+   467
+  ],
+  "page_idx": 9
+ },
+ {
+  "type": "text",
+  "text": "16:00 – 19:10 in Plenary Room and Parallel Room",
+  "text_level": 2,
+  "bbox": [
+   75,
+   503,
+   750,
+   549
+  ],
+  "page_idx": 9
+ },
+ {
+  "type": "text",
+  "text": "2 parallel sessions for each topic",
+  "text_level": 2,
+  "bbox": [
+   123,
+   565,
+   582,
+   613
+  ],
+  "page_idx": 9
+ },
+ {
+  "type": "text",
+  "text": "➢ **Standard three-neutrino oscillations:** Tuesday / Wednesday",
+  "bbox": [
+   141,
+   627,
+   924,
+   670
+  ],
+  "page_idx": 9
+ },
+ {
+  "type": "text",
+  "text": "➢ **Beyond the standard framework:** Wednesday / Friday",
+  "bbox": [
+   142,
+   673,
+   906,
+   717
+  ],
+  "page_idx": 9
+ },
+ {
+  "type": "text",
+  "text": "➢ **Masses, states and interactions:** Friday / Saturday",
+  "bbox": [
+   142,
+   721,
+   878,
+   764
+  ],
+  "page_idx": 9
+ },
+ {
+  "type": "text",
+  "text": "➢ **Particle physics from sky and cosmos:** Tuesday / Saturday",
+  "bbox": [
+   142,
+   770,
+   901,
+   815
+  ],
+  "page_idx": 9
+ },
+ {
+  "type": "text",
+  "text": "Saturday 5, 19:10 Concluding talk by Fiorenza Donato",
+  "text_level": 2,
+  "bbox": [
+   73,
+   885,
+   855,
+   933
+  ],
+  "page_idx": 9
+ },
+ {
+  "type": "page_number",
+  "text": "10",
+  "bbox": [
+   902,
+   943,
+   923,
+   965
+  ],
+  "page_idx": 9
+ },
+ {
+  "type": "header",
+  "text": "The network CDSHotels-Basiliani is available in the whole hotel area, without password",
+  "bbox": [
+   45,
+   115,
+   782,
+   224
+  ],
+  "page_idx": 10
+ },
+ {
+  "type": "header",
+  "text": "",
+  "bbox": [
+   789,
+   49,
+   977,
+   246
+  ],
+  "page_idx": 10
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_10_image_2.jpg",
+  "image_caption": [],
+  "image_footnote": [],
+  "bbox": [
+   68,
+   343,
+   576,
+   870
+  ],
+  "page_idx": 10
+ },
+ {
+  "type": "text",
+  "text": "**Ask secretariat for questions/help**",
+  "bbox": [
+   630,
+   701,
+   905,
+   796
+  ],
+  "page_idx": 10
+ },
+ {
+  "type": "page_number",
+  "text": "11",
+  "bbox": [
+   901,
+   944,
+   923,
+   965
+  ],
+  "page_idx": 10
+ },
+ {
+  "type": "text",
+  "text": "Logistic information",
+  "text_level": 2,
+  "bbox": [
+   95,
+   25,
+   470,
+   83
+  ],
+  "page_idx": 11
+ },
+ {
+  "type": "text",
+  "text": "✓ Meal times",
+  "text_level": 2,
+  "bbox": [
+   54,
+   129,
+   210,
+   165
+  ],
+  "page_idx": 11
+ },
+ {
+  "type": "text",
+  "text": "**7:30 - 9:30**",
+  "bbox": [
+   421,
+   128,
+   575,
+   163
+  ],
+  "page_idx": 11
+ },
+ {
+  "type": "text",
+  "text": "**12:30 - 14:00**",
+  "bbox": [
+   405,
+   164,
+   573,
+   199
+  ],
+  "page_idx": 11
+ },
+ {
+  "type": "text",
+  "text": "**Hotel Solarium and Pool are free of charge** <strong><u>Warning</u></strong>**: deep pool, not suitable for children**",
+  "bbox": [
+   71,
+   267,
+   593,
+   349
+  ],
+  "page_idx": 11
+ },
+ {
+  "type": "text",
+  "text": "**Other hotel services (SPA, drinks at the bar...) are at your own expenses**",
+  "bbox": [
+   71,
+   371,
+   917,
+   410
+  ],
+  "page_idx": 11
+ },
+ {
+  "type": "text",
+  "text": "Beach (Lido Camillo)",
+  "text_level": 2,
+  "bbox": [
+   54,
+   459,
+   307,
+   497
+  ],
+  "page_idx": 11
+ },
+ {
+  "type": "text",
+  "text": "• **You can reach Lido Camillo, on foot (1.4 km)**",
+  "bbox": [
+   72,
+   531,
+   396,
+   606
+  ],
+  "page_idx": 11
+ },
+ {
+  "type": "text",
+  "text": "**Please, show the NOW badge at the entrance**",
+  "bbox": [
+   72,
+   638,
+   422,
+   710
+  ],
+  "page_idx": 11
+ },
+ {
+  "type": "text",
+  "text": "**Beach facilities (umbrellas, chairs, beds) are free**",
+  "bbox": [
+   72,
+   745,
+   393,
+   818
+  ],
+  "page_idx": 11
+ },
+ {
+  "type": "text",
+  "text": "Otranto center",
+  "text_level": 2,
+  "bbox": [
+   54,
+   875,
+   257,
+   909
+  ],
+  "page_idx": 11
+ },
+ {
+  "type": "text",
+  "text": "**Around 1 km from the hotel**",
+  "bbox": [
+   71,
+   927,
+   387,
+   964
+  ],
+  "page_idx": 11
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_11_image_12.jpg",
+  "image_caption": [],
+  "image_footnote": [],
+  "bbox": [
+   457,
+   421,
+   831,
+   981
+  ],
+  "page_idx": 11
+ },
+ {
+  "type": "page_number",
+  "text": "12",
+  "bbox": [
+   901,
+   943,
+   923,
+   965
+  ],
+  "page_idx": 11
+ },
+ {
+  "type": "text",
+  "text": "Thursday 3<sup>rd</sup> - Free afternoon",
+  "text_level": 2,
+  "bbox": [
+   181,
+   44,
+   770,
+   103
+  ],
+  "page_idx": 12
+ },
+ {
+  "type": "text",
+  "text": "✓ Options:",
+  "text_level": 2,
+  "bbox": [
+   36,
+   151,
+   201,
+   200
+  ],
+  "page_idx": 12
+ },
+ {
+  "type": "text",
+  "text": "1) **Otranto tour** (departure 15:45 on foot, back before dinner)",
+  "bbox": [
+   103,
+   224,
+   925,
+   271
+  ],
+  "page_idx": 12
+ },
+ {
+  "type": "text",
+  "text": "2) **Individual activity** (resort, beach, Otranto)",
+  "bbox": [
+   103,
+   295,
+   719,
+   343
+  ],
+  "page_idx": 12
+ },
+ {
+  "type": "text",
+  "text": "**Please, confirm your partecipation to the tour as soon as possible and write your name on the board at the secretariat**",
+  "bbox": [
+   54,
+   384,
+   869,
+   467
+  ],
+  "page_idx": 12
+ },
+ {
+  "type": "text",
+  "text": "**Public lecture at the Otranto Castle**",
+  "bbox": [
+   204,
+   597,
+   705,
+   643
+  ],
+  "page_idx": 12
+ },
+ {
+  "type": "text",
+  "text": "**Introduction: G. Galati Speaker: P. Bernardini**",
+  "bbox": [
+   204,
+   659,
+   524,
+   762
+  ],
+  "page_idx": 12
+ },
+ {
+  "type": "text",
+  "text": "**(in Italian, open to students and local citizens, free access)**",
+  "bbox": [
+   204,
+   787,
+   637,
+   879
+  ],
+  "page_idx": 12
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_12_image_8.jpg",
+  "image_caption": [],
+  "image_footnote": [],
+  "bbox": [
+   724,
+   517,
+   943,
+   926
+  ],
+  "page_idx": 12
+ },
+ {
+  "type": "page_number",
+  "text": "13",
+  "bbox": [
+   902,
+   944,
+   922,
+   965
+  ],
+  "page_idx": 12
+ },
+ {
+  "type": "text",
+  "text": "Otranto tour",
+  "text_level": 2,
+  "bbox": [
+   153,
+   26,
+   369,
+   73
+  ],
+  "page_idx": 13
+ },
+ {
+  "type": "text",
+  "text": "❖ **Guided visit to the town**",
+  "bbox": [
+   15,
+   115,
+   381,
+   160
+  ],
+  "page_idx": 13
+ },
+ {
+  "type": "text",
+  "text": "❖ **Many cultural attractions Castle, Cathedral, walk on the bastions …**",
+  "bbox": [
+   16,
+   204,
+   398,
+   331
+  ],
+  "page_idx": 13
+ },
+ {
+  "type": "text",
+  "text": "❖ **Back to the resort before dinner**",
+  "bbox": [
+   16,
+   364,
+   502,
+   409
+  ],
+  "page_idx": 13
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_13_image_4.jpg",
+  "image_caption": [],
+  "image_footnote": [],
+  "bbox": [
+   517,
+   13,
+   991,
+   433
+  ],
+  "page_idx": 13
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_13_image_5.jpg",
+  "image_caption": [],
+  "image_footnote": [],
+  "bbox": [
+   9,
+   433,
+   570,
+   991
+  ],
+  "page_idx": 13
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_13_image_6.jpg",
+  "image_caption": [],
+  "image_footnote": [],
+  "bbox": [
+   572,
+   435,
+   990,
+   991
+  ],
+  "page_idx": 13
+ },
+ {
+  "type": "text",
+  "text": "Other events",
+  "text_level": 2,
+  "bbox": [
+   121,
+   53,
+   375,
+   107
+  ],
+  "page_idx": 14
+ },
+ {
+  "type": "text",
+  "text": "Tuesday 1<sup>st</sup> Dinner with Apulian cuisine (20:30)",
+  "bbox": [
+   22,
+   199,
+   479,
+   291
+  ],
+  "page_idx": 14
+ },
+ {
+  "type": "text",
+  "text": "Wednesday 2<sup>nd</sup>",
+  "text_level": 2,
+  "bbox": [
+   21,
+   376,
+   222,
+   425
+  ],
+  "page_idx": 14
+ },
+ {
+  "type": "text",
+  "text": "Pizzica (folk dance typical of Salento) with “Balla Balla” Group",
+  "bbox": [
+   269,
+   376,
+   518,
+   561
+  ],
+  "page_idx": 14
+ },
+ {
+  "type": "text",
+  "text": "Friday 4<sup>th</sup>",
+  "bbox": [
+   21,
+   643,
+   154,
+   693
+  ],
+  "page_idx": 14
+ },
+ {
+  "type": "text",
+  "text": "Social dinner (20:30)",
+  "bbox": [
+   221,
+   643,
+   499,
+   691
+  ],
+  "page_idx": 14
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_14_image_6.jpg",
+  "image_caption": [],
+  "image_footnote": [],
+  "bbox": [
+   567,
+   19,
+   983,
+   925
+  ],
+  "page_idx": 14
+ },
+ {
+  "type": "page_number",
+  "text": "15",
+  "bbox": [
+   902,
+   944,
+   923,
+   965
+  ],
+  "page_idx": 14
+ },
+ {
+  "type": "text",
+  "text": "**Enjoy the Workshop, Otranto, the Basiliani Hotel and the sea !**",
+  "bbox": [
+   204,
+   51,
+   938,
+   179
+  ],
+  "page_idx": 15
+ },
+ {
+  "type": "image",
+  "img_path": "images/page_15_image_1.jpg",
+  "image_caption": [],
+  "image_footnote": [],
+  "bbox": [
+   0,
+   301,
+   1000,
+   928
+  ],
+  "page_idx": 15
+ },
+ {
+  "type": "page_number",
+  "text": "16",
+  "bbox": [
+   901,
+   943,
+   923,
+   965
+  ],
+  "page_idx": 15
+ }
+]
