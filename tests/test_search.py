@@ -71,3 +71,8 @@ def test_context_returns_neighbours_in_order(services):
 def test_context_of_an_unknown_chunk_is_an_error(services):
     with pytest.raises(KeyError, match="no chunk"):
         context(services, "00000000-0000-0000-0000-000000000000")
+
+
+def test_a_date_only_upper_bound_includes_that_whole_day(services):
+    hits = search(services, "thallium", Filters(date_to="2026-03-03"))
+    assert "b" * 64 in {h.document_id for h in hits}

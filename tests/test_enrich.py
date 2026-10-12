@@ -43,3 +43,16 @@ def test_real_description_of_the_paper_chart(tmp_path):
     only_chart = Parsed(parsed.directory, parsed.title, parsed.authors, parsed.created_at, parsed.pages, chart)
     [description] = describe_figures(only_chart, Config(data_dir=tmp_path)).values()
     assert "spectrum" in description.lower() or "energy" in description.lower()
+
+
+def test_a_slow_figure_fails_that_figure_not_the_job(tmp_path):
+    import httpx
+    from rag.enrich import describe_figure
+
+    def timeout(request):
+        raise httpx.ReadTimeout("timed out", request=request)
+    image = tmp_path / "f.jpg"
+    image.write_bytes(b"jpg")
+    with httpx.Client(transport=httpx.MockTransport(timeout)) as client:
+        with pytest.raises(httpx.ReadTimeout):
+            describe_figure(image, "", config=Config(data_dir=tmp_path), client=client)

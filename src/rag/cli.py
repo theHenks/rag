@@ -34,11 +34,13 @@ def _cmd_add(args, services: Services) -> int:
         return 0
     status = run_foreground(job, services, progress=lambda m: print(m, file=sys.stderr))
     _print_job(services, job)
-    return 1 if status == "failed" else 0
+    return 0 if status == "completed" else 1
 
 
 def _print_job(services: Services, job_id: int) -> int:
     job = services.catalog.get_job(job_id)
+    if job is None:
+        raise KeyError(f"no job {job_id}")
     files = services.catalog.job_files(job_id)
     indexed = sum(f.status == "done" and f.stage != "skipped-unchanged" for f in files)
     unchanged = sum(f.stage == "skipped-unchanged" for f in files)

@@ -14,7 +14,7 @@ from pathlib import Path
 
 from rag.catalog import Catalog, Job
 from rag.config import Config, config_path
-from rag.ingest import ABORTING, Services, discover, enrich_document, ingest_file
+from rag.ingest import ABORTING, Services, discover, enrich_document, ingest_file, remove_orphans
 from rag.metadata import Overrides
 
 Progress = Callable[[str], None]
@@ -77,6 +77,8 @@ def _run_add(job: Job, services: Services, progress: Progress) -> bool:
             continue
         catalog.update_job_file(job.id, str(pdf), stage="skipped-unchanged" if skipped else "write",
                                 status="done", document_id=document_id)
+    for document_id in remove_orphans(services):
+        progress(f"removed {document_id[:12]}: no file refers to it any more")
     return failed
 
 
@@ -105,7 +107,9 @@ def run_job(job: Job, services: Services, progress: Progress = lambda m: None) -
     try:
         runner = {"add": _run_add, "enrich": _run_enrich}[job.kind]
         failed = runner(job, services, progress)
-    except ABORTING as exc:
+    except Exception as exc:
+        # Recorded as failed rather than left running, which would requeue it
+        # with every new worker.
         catalog.finish_job(job.id, "failed", _error(exc))
         progress(f"job {job.id} stopped: {_error(exc)}")
         return "failed"
@@ -120,14 +124,18 @@ def run_worker(services: Services, progress: Progress = lambda m: None) -> int:
     if not catalog.acquire_worker(pid):
         return 0
     ran = 0
-    try:
-        catalog.requeue_dead_jobs()
-        while (job := catalog.next_queued_job()) is not None:
-            run_job(job, services, progress)
-            ran += 1
-    finally:
-        catalog.release_worker(pid)
-    return ran
+    while True:
+        try:
+            catalog.requeue_dead_jobs()
+            while (job := catalog.next_queued_job()) is not None:
+                run_job(job, services, progress)
+                ran += 1
+        finally:
+            catalog.release_worker(pid)
+        # A job submitted after the last check, while this worker still held the
+        # slot, found the slot taken and was left for this worker to run.
+        if catalog.next_queued_job() is None or not catalog.acquire_worker(pid):
+            return ran
 
 
 def run_foreground(job_id: int, services: Services, progress: Progress) -> str:
@@ -141,6 +149,10 @@ def run_foreground(job_id: int, services: Services, progress: Progress) -> str:
         return run_job(catalog.get_job(job_id), services, progress)
     finally:
         catalog.release_worker(pid)
+        # Workers started while this run held the slot exited without running
+        # their jobs.
+        if catalog.next_queued_job() is not None:
+            spawn_worker(services.config)
 
 
 def spawn_worker(config: Config) -> None:

@@ -79,3 +79,39 @@ def test_foreground_refuses_while_a_worker_runs(tmp_path, services):
     services.catalog.acquire_worker(os.getppid())
     with pytest.raises(WorkerBusy, match=str(os.getppid())):
         run_foreground(job, services, progress=lambda m: None)
+
+
+def test_an_error_outside_the_file_loop_fails_the_job(tmp_path, services, monkeypatch):
+    def broken(path):
+        raise RuntimeError("folder vanished")
+    monkeypatch.setattr("rag.jobs.discover", broken)
+    job = submit_add(services.catalog, _folder(tmp_path), Overrides(), enrich=False)
+    run_worker(services)
+    finished = services.catalog.get_job(job)
+    assert finished.status == "failed" and "RuntimeError: folder vanished" in finished.error
+
+
+def test_a_job_queued_while_the_worker_releases_is_still_run(tmp_path, services, monkeypatch):
+    folder = _folder(tmp_path)
+    first = submit_add(services.catalog, folder, Overrides(), enrich=False)
+    late = []
+    release = services.catalog.release_worker
+
+    def release_and_submit(pid):
+        release(pid)
+        if not late:
+            late.append(submit_add(services.catalog, folder, Overrides(), enrich=False))
+    monkeypatch.setattr(services.catalog, "release_worker", release_and_submit)
+    run_worker(services)
+    assert services.catalog.get_job(late[0]).status == "completed_with_failures"
+    assert services.catalog.get_job(first).status == "completed_with_failures"
+
+
+def test_foreground_run_starts_a_worker_for_jobs_left_in_the_queue(tmp_path, services, monkeypatch):
+    spawned = []
+    monkeypatch.setattr("rag.jobs.spawn_worker", lambda config: spawned.append(config))
+    folder = _folder(tmp_path)
+    job = submit_add(services.catalog, folder, Overrides(), enrich=False)
+    submit_add(services.catalog, folder, Overrides(), enrich=False)
+    run_foreground(job, services, progress=lambda m: None)
+    assert spawned == [services.config]

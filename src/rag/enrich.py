@@ -66,7 +66,7 @@ def describe_figure(image: Path, caption: str, *, config: Config, client: httpx.
     }
     try:
         response = client.post(f"{config.ollama_url}/api/chat", json=payload, timeout=300)
-    except httpx.TransportError as exc:
+    except httpx.ConnectError as exc:
         raise VisionUnavailable(f"Ollama is not reachable at {config.ollama_url} ({exc})") from exc
     response.raise_for_status()
     return response.json()["message"]["content"].strip()

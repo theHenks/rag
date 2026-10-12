@@ -108,6 +108,10 @@ class Index:
         self._call(self.client.delete, self.name,
                    points_selector=models.FilterSelector(filter=_document_filter(document_id)), wait=True)
 
+    def set_document_payload(self, document_id: str, payload: dict) -> None:
+        self._call(self.client.set_payload, self.name, payload=payload,
+                   points=models.FilterSelector(filter=_document_filter(document_id)), wait=True)
+
     def add_points(self, points: list[models.PointStruct]) -> None:
         for start in range(0, len(points), 64):
             self._call(self.client.upsert, self.name, points=points[start:start + 64], wait=True)

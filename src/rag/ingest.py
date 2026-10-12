@@ -3,8 +3,8 @@ from __future__ import annotations
 
 import hashlib
 import json
+import threading
 from collections.abc import Callable
-from functools import cached_property
 from pathlib import Path
 
 from rag.catalog import Catalog, Document
@@ -34,21 +34,34 @@ class Services:
         self.config = config
         self.catalog = Catalog(config.catalog_path)
         self._embedder = embedder
+        self._index: Index | None = None
         self.parser = parser
+        # The MCP server calls tools from several threads; the lock keeps the
+        # first concurrent calls from loading the embedding model twice.
+        self._lock = threading.RLock()
 
-    @cached_property
+    @property
     def embedder(self) -> Embedder:
-        if self._embedder is not None:
+        with self._lock:
+            if self._embedder is None:
+                from rag.embed import ModelEmbedder
+
+                self._embedder = ModelEmbedder(self.config)
             return self._embedder
-        from rag.embed import ModelEmbedder
 
-        return ModelEmbedder(self.config)
-
-    @cached_property
+    @property
     def index(self) -> Index:
-        index = Index(self.config, self.embedder.dense_size)
-        index.ensure_collection()
-        return index
+        with self._lock:
+            if self._index is None:
+                index = Index(self.config, self.embedder.dense_size)
+                index.ensure_collection()
+                self._index = index
+            return self._index
+
+    def reset_index(self) -> None:
+        """Forget the index so the next use recreates and checks the collection."""
+        with self._lock:
+            self._index = None
 
     def parse(self, pdf: Path, document_id: str) -> Parsed:
         if self.parser is not None:
@@ -66,6 +79,7 @@ class Services:
     def settings(self) -> str:
         """Everything that, when changed, makes an indexed document out of date."""
         return json.dumps({"mineru": mineru_version(), "tier": self.config.mineru_tier,
+                           "chunk_tokens": self.config.chunk_tokens,
                            **index_settings(self.config, self.embedder.dense_size)}, sort_keys=True)
 
 
@@ -119,7 +133,37 @@ def _index_document(doc: Document, parsed: Parsed, slides: bool, services: Servi
     points = build_points(doc.id, chunks, texts, _payload_base(doc), services.embedder)
     stage("write")
     services.index.replace_document(doc.id, points)
-    services.catalog.set_status(doc.id, "indexed", settings=services.settings())
+    doc.status, doc.settings, doc.error = "indexed", services.settings(), None
+    services.catalog.put_document(doc)
+
+
+def _drop_if_orphaned(previous: str | None, document_id: str, services: Services) -> None:
+    """Remove the document a path pointed to before, once no path refers to it."""
+    if previous and previous != document_id:
+        old = services.catalog.get_document(previous)
+        if old is not None and not old.paths:
+            remove_document(previous, services)
+
+
+def _apply_overrides(doc: Document, overrides: Overrides, services: Services) -> None:
+    """Apply metadata given for a document that is otherwise up to date."""
+    changed = {}
+    if overrides.source_type and overrides.source_type != doc.source_type:
+        changed["source_type"] = overrides.source_type
+    if overrides.title and overrides.title != doc.title:
+        changed["title"] = overrides.title
+    if overrides.authors and list(overrides.authors) != doc.authors:
+        changed["authors"] = list(overrides.authors)
+    if overrides.date and overrides.date != doc.date:
+        changed["date"] = overrides.date
+    if set(overrides.tags) - set(doc.tags):
+        changed["tags"] = doc.tags + [t for t in overrides.tags if t not in doc.tags]
+    if not changed:
+        return
+    for key, value in changed.items():
+        setattr(doc, key, value)
+    services.catalog.put_document(doc)
+    services.index.set_document_payload(doc.id, _payload_base(doc))
 
 
 def ingest_file(pdf: Path, *, root: Path, overrides: Overrides, enrich: bool, services: Services,
@@ -138,6 +182,8 @@ def ingest_file(pdf: Path, *, root: Path, overrides: Overrides, enrich: bool, se
     if (existing and existing.status == "indexed" and existing.settings == services.settings()
             and (existing.enrich or not enrich)):
         catalog.add_path(str(pdf), document_id)
+        _apply_overrides(existing, overrides, services)
+        _drop_if_orphaned(previous, document_id, services)
         return document_id, True
 
     stage("parse")
@@ -147,11 +193,8 @@ def ingest_file(pdf: Path, *, root: Path, overrides: Overrides, enrich: bool, se
     meta = resolve_metadata(pdf, parsed, talk, overrides)
     catalog.put_document(_document(document_id, meta, parsed, enrich or bool(existing and existing.enrich)))
     catalog.add_path(str(pdf), document_id)
-    if previous and previous != document_id:
-        old = catalog.get_document(previous)
-        if old is not None and not old.paths:
-            remove_document(previous, services)
     _index_document(catalog.get_document(document_id), parsed, meta.slides, services, stage)
+    _drop_if_orphaned(previous, document_id, services)
     return document_id, False
 
 
@@ -160,7 +203,6 @@ def enrich_document(document_id: str, services: Services, stage: Stage) -> None:
     if doc is None:
         raise KeyError(f"no document {document_id}")
     doc.enrich = True
-    services.catalog.put_document(doc)
     parsed = services.load_cached(document_id)
     _index_document(doc, parsed, _slides(doc, parsed), services, stage)
 
@@ -170,10 +212,19 @@ def remove_document(document_id: str, services: Services) -> None:
     services.catalog.delete_document(document_id)
 
 
+def remove_orphans(services: Services) -> list[str]:
+    """Remove documents no path refers to any more, such as the old version of a
+    file whose replacement was interrupted before the old one was removed."""
+    orphans = [doc.id for doc in services.catalog.list_documents() if not doc.paths]
+    for document_id in orphans:
+        remove_document(document_id, services)
+    return orphans
+
+
 def rebuild(services: Services, report: Callable[[str], None]) -> list[tuple[str, str]]:
     """Drop the collection and re-index every catalogued document from the MinerU cache."""
     services.index.drop()
-    del services.index
+    services.reset_index()
     failures = []
     for doc in services.catalog.list_documents():
         report(f"{doc.title} ({doc.id[:12]})")

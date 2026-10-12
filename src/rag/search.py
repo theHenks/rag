@@ -56,8 +56,11 @@ def build_filter(filters: Filters) -> models.Filter | None:
     if filters.document_id:
         must.append(models.FieldCondition(key="document_id", match=models.MatchValue(value=filters.document_id)))
     if filters.date_from or filters.date_to:
+        date_to = filters.date_to
+        if date_to and len(date_to) == 10:  # a bare date includes that whole day
+            date_to += "T23:59:59"
         must.append(models.FieldCondition(key="date", range=models.DatetimeRange(
-            gte=filters.date_from, lte=filters.date_to)))
+            gte=filters.date_from, lte=date_to)))
     if filters.authors:
         must.append(models.Filter(should=[
             models.FieldCondition(key="authors", match=models.MatchText(text=name)) for name in filters.authors]))

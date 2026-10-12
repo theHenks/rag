@@ -51,3 +51,22 @@ def test_errors_exit_nonzero_with_a_message(env, capsys):
     assert "no such file or directory" in capsys.readouterr().err
     assert cli.main(["rm", "ffff"]) == 2
     assert "no document" in capsys.readouterr().err
+
+
+def test_a_job_with_failed_files_exits_nonzero(env, capsys, monkeypatch):
+    services, folder = env
+    (folder / "bad.pdf").write_bytes(b"BROKEN")
+    good = services.parser
+
+    def parser(pdf, doc_id):
+        if pdf.read_bytes().startswith(b"BROKEN"):
+            raise RuntimeError("cannot parse")
+        return good(pdf, doc_id)
+    services.parser = parser
+    assert cli.main(["add", str(folder)]) == 1
+    assert "1 failed" in capsys.readouterr().out
+
+
+def test_status_of_an_unknown_job_is_an_error(env, capsys):
+    assert cli.main(["status", "999"]) == 2
+    assert "no job 999" in capsys.readouterr().err

@@ -1,8 +1,14 @@
+import threading
+import time
+from dataclasses import replace
 from pathlib import Path
 
 import pytest
 
-from rag.ingest import Services, discover, enrich_document, ingest_file, rebuild, remove_document, sha256_of
+from rag.enrich import VisionUnavailable
+from rag.index import point_id
+from rag.ingest import (Services, discover, enrich_document, ingest_file, rebuild, remove_document, remove_orphans,
+                        sha256_of)
 from rag.metadata import Overrides
 from rag.parse import load_parsed
 
@@ -110,3 +116,73 @@ def test_rebuild_recreates_the_index_from_the_cache(tmp_path, services):
     services.index.drop()
     assert rebuild(services, report=lambda m: None) == []
     assert services.index.count(doc_id) == count
+
+
+def test_a_path_taking_already_indexed_content_drops_the_orphaned_document(tmp_path, services):
+    first = _pdf(tmp_path, "a.pdf", b"%PDF-1.4 one")
+    other = _pdf(tmp_path / "x", "b.pdf", b"%PDF-1.4 two")
+    old, _ = ingest_file(first, root=tmp_path, overrides=Overrides(), enrich=False, services=services, stage=lambda s: None)
+    two, _ = ingest_file(other, root=tmp_path, overrides=Overrides(), enrich=False, services=services, stage=lambda s: None)
+    first.write_bytes(b"%PDF-1.4 two")
+    doc_id, skipped = ingest_file(first, root=tmp_path, overrides=Overrides(), enrich=False, services=services, stage=lambda s: None)
+    assert (doc_id, skipped) == (two, True)
+    assert services.catalog.get_document(old) is None and services.index.count(old) == 0
+
+
+def test_documents_without_paths_are_swept(tmp_path, services):
+    doc_id, _ = ingest_file(_pdf(tmp_path, "p.pdf"), root=tmp_path, overrides=Overrides(), enrich=False,
+                            services=services, stage=lambda s: None)
+    services.catalog.db.execute("DELETE FROM paths")
+    assert remove_orphans(services) == [doc_id]
+    assert services.catalog.get_document(doc_id) is None and services.index.count(doc_id) == 0
+
+
+def test_failed_enrichment_leaves_the_flag_unset(tmp_path, services, monkeypatch):
+    doc_id, _ = ingest_file(_pdf(tmp_path, "p.pdf"), root=tmp_path, overrides=Overrides(), enrich=False,
+                            services=services, stage=lambda s: None)
+
+    def down(config):
+        raise VisionUnavailable("Ollama is not reachable")
+    monkeypatch.setattr("rag.ingest.check_vision", down)
+    with pytest.raises(VisionUnavailable):
+        enrich_document(doc_id, services, stage=lambda s: None)
+    assert not services.catalog.get_document(doc_id).enrich
+
+
+def test_overrides_on_an_unchanged_file_are_applied(tmp_path, services):
+    pdf = _pdf(tmp_path, "p.pdf")
+    doc_id, _ = ingest_file(pdf, root=tmp_path, overrides=Overrides(), enrich=False, services=services, stage=lambda s: None)
+    _, skipped = ingest_file(pdf, root=tmp_path, overrides=Overrides(source_type="paper", tags=("legend",)),
+                             enrich=False, services=services, stage=lambda s: None)
+    doc = services.catalog.get_document(doc_id)
+    assert skipped and (doc.source_type, doc.tags) == ("paper", ["legend"])
+    payload = services.index.chunk(point_id(doc_id, 0))
+    assert (payload["source_type"], payload["tags"]) == ("paper", ["legend"])
+
+
+def test_changing_chunk_size_makes_documents_out_of_date(tmp_path, config, fake_embedder):
+    pdf = _pdf(tmp_path, "p.pdf")
+    first = Services(config, embedder=fake_embedder, parser=FixtureParser())
+    ingest_file(pdf, root=tmp_path, overrides=Overrides(), enrich=False, services=first, stage=lambda s: None)
+    second = Services(replace(config, chunk_tokens=200), embedder=fake_embedder, parser=FixtureParser())
+    _, skipped = ingest_file(pdf, root=tmp_path, overrides=Overrides(), enrich=False, services=second, stage=lambda s: None)
+    assert not skipped
+
+
+def test_concurrent_first_use_builds_one_embedder(config, monkeypatch):
+    built = []
+
+    class Slow:
+        dense_size = 8
+
+        def __init__(self, config):
+            time.sleep(0.2)
+            built.append(self)
+    monkeypatch.setattr("rag.embed.ModelEmbedder", Slow)
+    services = Services(config)
+    threads = [threading.Thread(target=lambda: services.embedder) for _ in range(4)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+    assert len(built) == 1
