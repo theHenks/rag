@@ -1,3 +1,4 @@
+import hashlib
 import os
 import uuid
 
@@ -6,6 +7,7 @@ import pytest
 from qdrant_client import QdrantClient
 
 from rag.config import Config
+from rag.embed import Embedder, bm25
 
 FIXTURES = os.path.join(os.path.dirname(__file__), "fixtures")
 
@@ -27,3 +29,32 @@ def config(tmp_path, qdrant_url) -> Config:
     client = QdrantClient(url=qdrant_url)
     if client.collection_exists(collection):
         client.delete_collection(collection)
+
+
+class FakeEmbedder(Embedder):
+    """Deterministic bag-of-words dense vectors; BM25 is the real one."""
+    dense_size = 8
+
+    def __init__(self, config: Config):
+        self._bm25 = bm25(config)
+
+    def count_tokens(self, text: str) -> int:
+        return len(text.split())
+
+    def _vector(self, text: str) -> list[float]:
+        v = [0.0] * 8
+        for word in text.lower().split():
+            v[int(hashlib.md5(word.encode()).hexdigest(), 16) % 8] += 1.0
+        norm = sum(x * x for x in v) ** 0.5 or 1.0
+        return [x / norm for x in v]
+
+    def dense_documents(self, texts):
+        return [self._vector(t) for t in texts]
+
+    def dense_query(self, text):
+        return self._vector(text)
+
+
+@pytest.fixture
+def fake_embedder(config) -> FakeEmbedder:
+    return FakeEmbedder(config)
