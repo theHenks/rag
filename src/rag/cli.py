@@ -114,6 +114,16 @@ def _cmd_doctor(args, services: Services) -> int:
     return 0 if all(ok for name, ok, _ in results if not name.startswith("ollama")) else 1
 
 
+def _cmd_eval(args, services: Services) -> int:
+    from rag.evaluate import evaluate, load_questions
+    path = Path(args.questions) if args.questions else services.config.data_dir / "eval.jsonl"
+    report = evaluate(services, load_questions(path))
+    print("  ".join(f"recall@{k} {v:.2f}" for k, v in report.recall.items()) + f"  MRR {report.mrr:.2f}")
+    for question in report.misses:
+        print(f"  miss: {question}")
+    return 0
+
+
 def _cmd_mcp(args, services: Services) -> int:
     from rag.mcp_server import serve
     serve()
@@ -165,6 +175,10 @@ def _parser() -> argparse.ArgumentParser:
 
     sub.add_parser("rebuild", help="re-index everything from the MinerU cache").set_defaults(fn=_cmd_rebuild)
     sub.add_parser("doctor", help="check Qdrant, MinerU, Ollama and disk").set_defaults(fn=_cmd_doctor)
+    p = sub.add_parser("eval", help="measure retrieval on a question set")
+    p.add_argument("questions", nargs="?", help="JSON Lines file (default: eval.jsonl in the data directory)")
+    p.set_defaults(fn=_cmd_eval)
+
     sub.add_parser("mcp", help="run the MCP server on stdio").set_defaults(fn=_cmd_mcp)
     sub.add_parser("worker", help="run queued jobs (started by add and enrich)").set_defaults(fn=_cmd_worker)
     return parser
