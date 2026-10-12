@@ -1,0 +1,52 @@
+#!/bin/sh
+# Run the Qdrant server natively on 127.0.0.1:6333.
+#   scripts/qdrant start   download the pinned release once, then start it in the background
+#   scripts/qdrant stop    stop it
+#   scripts/qdrant status  report whether it answers
+# Storage, binary, log and pid file live in $RAG_QDRANT_DIR
+# (default: ~/Library/Application Support/rag/qdrant).
+set -eu
+
+VERSION=v1.19.1
+ASSET=qdrant-aarch64-apple-darwin.tar.gz
+DIR="${RAG_QDRANT_DIR:-$HOME/Library/Application Support/rag/qdrant}"
+BIN="$DIR/bin/qdrant-$VERSION"
+URL=http://127.0.0.1:6333
+
+answering() { curl -sf "$URL" >/dev/null 2>&1; }
+
+case "${1:-}" in
+start)
+    if answering; then echo "Qdrant already answers at $URL"; exit 0; fi
+    mkdir -p "$DIR/bin" "$DIR/storage" "$DIR/snapshots"
+    if [ ! -x "$BIN" ]; then
+        tmp=$(mktemp -d)
+        curl -fsSL "https://github.com/qdrant/qdrant/releases/download/$VERSION/$ASSET" -o "$tmp/$ASSET"
+        tar -xzf "$tmp/$ASSET" -C "$tmp"
+        mv "$tmp/qdrant" "$BIN"
+        rm -rf "$tmp"
+    fi
+    QDRANT__SERVICE__HOST=127.0.0.1 \
+    QDRANT__STORAGE__STORAGE_PATH="$DIR/storage" \
+    QDRANT__STORAGE__SNAPSHOTS_PATH="$DIR/snapshots" \
+    QDRANT__TELEMETRY_DISABLED=true \
+        nohup "$BIN" >>"$DIR/qdrant.log" 2>&1 &
+    echo $! >"$DIR/qdrant.pid"
+    for _ in $(seq 1 30); do
+        if answering; then echo "Qdrant $VERSION answers at $URL (log: $DIR/qdrant.log)"; exit 0; fi
+        sleep 1
+    done
+    echo "Qdrant did not answer within 30 s; see $DIR/qdrant.log" >&2
+    exit 1
+    ;;
+stop)
+    if [ -f "$DIR/qdrant.pid" ]; then kill "$(cat "$DIR/qdrant.pid")" && rm "$DIR/qdrant.pid"; echo stopped
+    else echo "no pid file in $DIR" >&2; exit 1; fi
+    ;;
+status)
+    if answering; then curl -s "$URL"; echo; else echo "Qdrant does not answer at $URL" >&2; exit 1; fi
+    ;;
+*)
+    echo "usage: scripts/qdrant start|stop|status" >&2; exit 2
+    ;;
+esac

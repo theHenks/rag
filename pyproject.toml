@@ -1,0 +1,32 @@
+[project]
+name = "rag"
+version = "0.1.0"
+description = "Hybrid search over a personal PDF library, for agents via MCP and for people via a CLI"
+readme = "README.md"
+authors = [{ name = "Florian Henkes", email = "florian.henkes@outlook.com" }]
+requires-python = ">=3.12"
+dependencies = [
+    "fastembed>=0.9,<1",
+    "httpx>=0.28",
+    "mcp>=2.3,<3",
+    "mineru>=4.0.12,<5",
+    "platformdirs>=4",
+    "qdrant-client>=1.19,<2",
+    "sentence-transformers>=6.1,<7",
+]
+
+[project.scripts]
+rag = "rag.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = ["pytest>=9.1", "pytest-asyncio>=1.4"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+addopts = "-m 'not slow'"
+markers = ["slow: needs downloaded models, MinerU, or Ollama"]
