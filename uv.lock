@@ -2965,6 +2965,7 @@ dependencies = [
     { name = "mineru" },
     { name = "platformdirs" },
     { name = "qdrant-client" },
+    { name = "rich" },
     { name = "sentence-transformers" },
 ]
 
@@ -2982,6 +2983,7 @@ requires-dist = [
     { name = "mineru", specifier = ">=4.0.12,<5" },
     { name = "platformdirs", specifier = ">=4" },
     { name = "qdrant-client", specifier = ">=1.19,<2" },
+    { name = "rich", specifier = ">=13" },
     { name = "sentence-transformers", specifier = ">=6.1,<7" },
 ]
 

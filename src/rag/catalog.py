@@ -181,7 +181,11 @@ class Catalog:
     # jobs
 
     def _job(self, row: sqlite3.Row) -> Job:
-        return Job(id=row["id"], kind=row["kind"], args=json.loads(row["args"]), status=row["status"],
+        # A running job stays 'running' in the table until a worker requeues it.
+        status = row["status"]
+        if status == "running" and (row["worker_pid"] is None or not pid_alive(row["worker_pid"])):
+            status = "interrupted"
+        return Job(id=row["id"], kind=row["kind"], args=json.loads(row["args"]), status=status,
                    worker_pid=row["worker_pid"], error=row["error"], interruptions=row["interruptions"],
                    created_at=row["created_at"], started_at=row["started_at"], finished_at=row["finished_at"])
 

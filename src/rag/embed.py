@@ -43,8 +43,14 @@ def bm25(config: Config):
 
 class ModelEmbedder(Embedder):
     def __init__(self, config: Config):
+        from huggingface_hub.utils import logging as hub_logging
         from sentence_transformers import SentenceTransformer
+        from transformers.utils import logging as transformers_logging
 
+        # The weight-loading bar and the hub's note about anonymous downloads
+        # would interleave with command output on every search.
+        transformers_logging.disable_progress_bar()
+        hub_logging.set_verbosity_error()
         self._model = SentenceTransformer(config.dense_model, device=config.device)
         self.dense_size = self._model.get_embedding_dimension()
         self._bm25 = bm25(config)

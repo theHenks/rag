@@ -90,6 +90,17 @@ def test_running_jobs_of_dead_workers_are_requeued(tmp_path):
     assert requeued.status == "queued" and requeued.interruptions == 1
 
 
+def test_a_running_job_whose_worker_died_reads_as_interrupted(tmp_path):
+    cat = Catalog(tmp_path / "c.sqlite3")
+    dead = cat.create_job("add", {"path": "/x"})
+    cat.start_job(dead, _dead_pid())
+    alive = cat.create_job("add", {"path": "/y"})
+    cat.start_job(alive, os.getpid())
+    assert cat.get_job(dead).status == "interrupted"
+    assert cat.get_job(alive).status == "running"
+    assert [j.status for j in cat.recent_jobs()] == ["running", "interrupted"]
+
+
 def test_job_files_track_stage_and_error(tmp_path):
     cat = Catalog(tmp_path / "c.sqlite3")
     job = cat.create_job("add", {"path": "/x"})

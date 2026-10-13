@@ -12,6 +12,7 @@ dependencies = [
     "mineru>=4.0.12,<5",
     "platformdirs>=4",
     "qdrant-client>=1.19,<2",
+    "rich>=13",
     "sentence-transformers>=6.1,<7",
 ]
 

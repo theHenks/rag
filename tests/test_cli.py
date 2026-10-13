@@ -1,8 +1,11 @@
+import re
 from pathlib import Path
 
 import pytest
+from rich.console import Console
 
 from rag import cli
+from rag.catalog import pid_alive
 from rag.ingest import Services
 from rag.parse import load_parsed
 
@@ -14,6 +17,7 @@ def env(config, fake_embedder, monkeypatch, tmp_path):
     services = Services(config, embedder=fake_embedder, parser=lambda pdf, doc_id: load_parsed(FIX / "paper"))
     monkeypatch.setattr(cli, "make_services", lambda: services)
     monkeypatch.setattr(cli, "spawn_worker", lambda config: None)
+    monkeypatch.setattr(cli, "console", Console(width=200, highlight=False))
     folder = tmp_path / "docs"
     folder.mkdir()
     (folder / "paper.pdf").write_bytes(b"%PDF x")
@@ -24,7 +28,7 @@ def test_add_search_status_rm(env, capsys):
     services, folder = env
     assert cli.main(["add", str(folder), "--type", "paper", "--tag", "legend"]) == 0
     out = capsys.readouterr().out
-    assert "1 indexed, 0 skipped, 0 failed" in out
+    assert "completed" in out and re.search(r"^files\s+1 indexed\s*$", out, re.M)
 
     assert cli.main(["search", "Majorana half-life", "--type", "paper"]) == 0
     out = capsys.readouterr().out
@@ -70,3 +74,34 @@ def test_a_job_with_failed_files_exits_nonzero(env, capsys, monkeypatch):
 def test_status_of_an_unknown_job_is_an_error(env, capsys):
     assert cli.main(["status", "999"]) == 2
     assert "no job 999" in capsys.readouterr().err
+
+
+def test_list_shows_documents_and_filters(env, capsys):
+    services, folder = env
+    cli.main(["add", str(folder), "--type", "paper", "--tag", "legend"])
+    capsys.readouterr()
+    [doc] = services.catalog.list_documents()
+
+    assert cli.main(["list"]) == 0
+    out = capsys.readouterr().out
+    assert "Final Result of the Majorana" in out and doc.id[:12] in out and "paper" in out
+    assert "1 document" in out
+
+    assert cli.main(["list", "--tag", "legend"]) == 0
+    assert doc.id[:12] in capsys.readouterr().out
+    assert cli.main(["list", "--type", "talk"]) == 0
+    assert "0 documents" in capsys.readouterr().out
+
+
+def test_status_reports_a_job_whose_process_died_as_interrupted(env, capsys):
+    services, folder = env
+    job = services.catalog.create_job("add", {"path": str(folder)})
+    dead = 2 ** 22 + 12345
+    assert not pid_alive(dead)
+    services.catalog.start_job(job, dead)
+
+    assert cli.main(["status"]) == 0
+    assert re.search(rf"^\s*{job}\s+add\s+interrupted\s", capsys.readouterr().out, re.M)
+    cli.main(["status", str(job)])
+    out = capsys.readouterr().out
+    assert f"Job {job} (add)  interrupted" in out and "resumes" in out

@@ -5,11 +5,22 @@ import argparse
 import sys
 from pathlib import Path
 
+from rich import box
+from rich.console import Console
+from rich.table import Table
+from rich.text import Text
+
 from rag.config import load_config
 from rag.ingest import ABORTING, Services, rebuild, remove_document
 from rag.jobs import WorkerBusy, run_foreground, run_worker, spawn_worker, submit_add, submit_enrich
 from rag.metadata import SOURCE_TYPES, Overrides
 from rag.search import Filters, search
+
+console = Console(highlight=False)
+
+_STATUS_STYLE = {"completed": "green", "indexed": "green", "running": "cyan", "queued": "cyan",
+                 "pending": "cyan", "interrupted": "yellow", "completed_with_failures": "yellow",
+                 "failed": "red"}
 
 
 def make_services() -> Services:
@@ -37,51 +48,167 @@ def _cmd_add(args, services: Services) -> int:
     return 0 if status == "completed" else 1
 
 
+def _home(path: str) -> str:
+    home = str(Path.home())
+    return "~" + path[len(home):] if path.startswith(home + "/") else path
+
+
+def _styled(status: str) -> Text:
+    return Text(status.replace("_", " "), style=_STATUS_STYLE.get(status, ""))
+
+
+def _counts(files) -> dict[str, int]:
+    return {
+        "indexed": sum(f.status == "done" and f.stage != "skipped-unchanged" for f in files),
+        "unchanged": sum(f.stage == "skipped-unchanged" for f in files),
+        "failed": sum(f.status == "failed" for f in files),
+        "not PDF": sum(f.status == "skipped" for f in files),
+        "waiting": sum(f.status == "pending" for f in files),
+    }
+
+
+def _summary(counts: dict[str, int]) -> str:
+    return " · ".join(f"{n} {label}" for label, n in counts.items() if n or label == "indexed")
+
+
 def _print_job(services: Services, job_id: int) -> int:
     job = services.catalog.get_job(job_id)
     if job is None:
         raise KeyError(f"no job {job_id}")
     files = services.catalog.job_files(job_id)
-    indexed = sum(f.status == "done" and f.stage != "skipped-unchanged" for f in files)
-    unchanged = sum(f.stage == "skipped-unchanged" for f in files)
-    failed = [f for f in files if f.status == "failed"]
-    others = [f for f in files if f.status == "skipped"]
-    print(f"job {job.id} ({job.kind}) {job.status}: {indexed} indexed, {unchanged} skipped, {len(failed)} failed")
+    folder = job.args.get("path")
+
+    console.print(Text.assemble((f"Job {job.id}", "bold"), f" ({job.kind})  ", _styled(job.status)))
+    grid = Table.grid(padding=(0, 2))
+    grid.add_column(style="dim")
+    grid.add_column()
+    if folder:
+        grid.add_row("folder", _home(folder))
+    grid.add_row("files", _summary(_counts(files)))
+    grid.add_row("started", (job.started_at or "not yet").replace("T", " ").replace("+00:00", " UTC"))
+    if job.finished_at:
+        grid.add_row("finished", job.finished_at.replace("T", " ").replace("+00:00", " UTC"))
     if job.interruptions:
-        print(f"  resumed after {job.interruptions} interruption(s)")
+        grid.add_row("resumed", f"after {job.interruptions} interruption(s)")
     if job.error:
-        print(f"  error: {job.error}")
-    for f in failed:
-        print(f"  FAILED {f.path} at {f.stage}: {f.error}")
-    for f in others:
-        print(f"  not indexed: {f.path} ({f.error})")
+        grid.add_row("error", Text(job.error, style="red"))
+    console.print(grid)
+    if job.status == "interrupted":
+        console.print(Text("Its process stopped; the next worker resumes it "
+                           "(started by any `rag add` or `rag enrich`).", style="yellow"))
+
+    def shown(path: str) -> str:
+        return path[len(folder) + 1:] if folder and path.startswith(folder + "/") else _home(path)
+
+    problems = [f for f in files if f.status in ("failed", "skipped")]
+    if problems:
+        table = Table(box=box.SIMPLE_HEAD, show_edge=False)
+        table.add_column("file", overflow="fold")
+        table.add_column("outcome")
+        table.add_column("reason", overflow="fold")
+        for f in problems:
+            outcome = Text(f"failed at {f.stage}", style="red") if f.status == "failed" else Text("not indexed")
+            table.add_row(shown(f.path), outcome, f.error or "")
+        console.print(table)
     return 0
 
 
 def _cmd_search(args, services: Services) -> int:
     filters = Filters(source_type=args.type, tags=args.tag, event=args.event, authors=args.author,
                       date_from=args.since, date_to=args.until)
-    for n, hit in enumerate(search(services, args.query, filters, limit=args.limit), start=1):
+    hits = search(services, args.query, filters, limit=args.limit)
+    if not hits:
+        console.print("No results.")
+    for n, hit in enumerate(hits, start=1):
         pages = f"p. {hit.page_start}" if hit.page_start == hit.page_end else f"pp. {hit.page_start}–{hit.page_end}"
-        print(f"{n}. {hit.title} — {pages} [{hit.source_type}] {hit.link or ''}")
-        print("   " + hit.text[:300].replace("\n", " "))
+        details = " · ".join(x for x in (hit.source_type, (hit.date or "")[:10], pages, hit.event_title) if x)
+        snippet = " ".join(hit.text.split())
+        if len(snippet) > 300:
+            snippet = snippet[:300].rsplit(" ", 1)[0] + " …"
+        console.print(Text.assemble((f"{n:>2}  ", "bold"), (hit.title, "bold")))
+        grid = Table.grid(padding=(0, 0))
+        grid.add_column(width=4)
+        grid.add_column(overflow="fold")
+        grid.add_row("", Text(details, style="dim"))
+        if hit.link:
+            grid.add_row("", Text(hit.link, style="blue"))
+        grid.add_row("", snippet)
+        console.print(grid)
+        console.print()
+    return 0
+
+
+def _cmd_list(args, services: Services) -> int:
+    docs = services.catalog.list_documents(source_type=args.type, tag=args.tag, event_id=args.event)
+    groups: dict[str, list] = {}
+    for doc in docs:
+        groups.setdefault(doc.event_title or "", []).append(doc)
+    show_status = any(d.status != "indexed" for d in docs)
+    for event, members in sorted(groups.items(), key=lambda g: g[0] == ""):
+        heading = event or ("Other documents" if len(groups) > 1 else "")
+        if heading:
+            console.print(Text.assemble((heading, "bold"), (f"  {len(members)}", "dim")))
+        table = Table(box=box.SIMPLE_HEAD, show_edge=False)
+        table.add_column("id", style="dim", no_wrap=True)
+        table.add_column("date", no_wrap=True)
+        table.add_column("type", no_wrap=True)
+        table.add_column("title", ratio=3)
+        table.add_column("authors", ratio=1, style="dim")
+        if show_status:
+            table.add_column("status", no_wrap=True)
+        for doc in members:
+            authors = doc.authors[0] + (" et al." if len(doc.authors) > 1 else "") if doc.authors else ""
+            row = [doc.id[:12], (doc.date or "")[:10], doc.source_type, doc.title, authors]
+            if show_status:
+                row.append(_styled(doc.status))
+            table.add_row(*row)
+        console.print(table)
+        console.print()
+    console.print(f"{len(docs)} document{'' if len(docs) == 1 else 's'}")
     return 0
 
 
 def _cmd_status(args, services: Services) -> int:
     if args.job is not None:
         return _print_job(services, args.job)
-    worker = services.catalog.worker_pid()
-    print(f"worker: {'running (pid %d)' % worker if worker else 'idle'}")
-    for job in services.catalog.recent_jobs():
-        print(f"job {job.id} {job.kind} {job.status} {job.args.get('path', '')}")
-    docs = services.catalog.list_documents()
-    print(f"{len(docs)} documents, {sum(d.status == 'indexed' for d in docs)} indexed")
+    catalog = services.catalog
+    worker = catalog.worker_pid()
+    console.print(Text.assemble(("Worker  ", "bold"),
+                                (f"running (pid {worker})", "cyan") if worker else ("idle", "dim")))
+
+    jobs = catalog.recent_jobs()
+    if jobs:
+        table = Table(box=box.SIMPLE_HEAD, show_edge=False, title="Recent jobs", title_justify="left",
+                      title_style="bold")
+        table.add_column("job", justify="right")
+        table.add_column("kind")
+        table.add_column("status", no_wrap=True)
+        table.add_column("files")
+        table.add_column("folder", overflow="fold")
+        for job in jobs:
+            path = job.args.get("path")
+            table.add_row(str(job.id), job.kind, _styled(job.status), _summary(_counts(catalog.job_files(job.id))),
+                          _home(path) if path else f"{len(job.args.get('document_ids', []))} document(s)")
+        console.print(table)
+
+    docs = catalog.list_documents()
+    console.print(Text.assemble(("Documents  ", "bold"),
+                                f"{len(docs)} catalogued, {sum(d.status == 'indexed' for d in docs)} indexed"))
+    problems = Table(box=box.SIMPLE_HEAD, show_edge=False)
+    problems.add_column("id", style="dim", no_wrap=True)
+    problems.add_column("title")
+    problems.add_column("problem", overflow="fold")
     for doc in docs:
         if not any(Path(p).exists() for p in doc.paths):
-            print(f"  missing on disk: {doc.title} ({doc.id[:12]}) {doc.paths}")
+            problems.add_row(doc.id[:12], doc.title, Text("missing on disk: " + ", ".join(map(_home, doc.paths)),
+                                                          style="yellow"))
         if doc.status == "failed":
-            print(f"  failed: {doc.title} ({doc.id[:12]}): {doc.error}")
+            problems.add_row(doc.id[:12], doc.title, Text(doc.error or "failed", style="red"))
+    if problems.row_count:
+        console.print(problems)
+    if any(j.status == "interrupted" for j in jobs):
+        console.print(Text("Interrupted jobs resume when the next worker starts "
+                           "(any `rag add` or `rag enrich`).", style="yellow"))
     return 0
 
 
@@ -162,6 +289,12 @@ def _parser() -> argparse.ArgumentParser:
     p.add_argument("--until", help="ISO 8601 date")
     p.add_argument("--limit", type=int, default=8)
     p.set_defaults(fn=_cmd_search)
+
+    p = sub.add_parser("list", help="catalogued documents, oldest first")
+    p.add_argument("--type", choices=SOURCE_TYPES)
+    p.add_argument("--tag")
+    p.add_argument("--event", help="Indico event id")
+    p.set_defaults(fn=_cmd_list)
 
     p = sub.add_parser("status", help="jobs, failures, and documents missing on disk")
     p.add_argument("job", nargs="?", type=int)

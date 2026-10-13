@@ -46,6 +46,7 @@ status.
 ```bash
 rag add <path> [--type paper] [--tag legend] [--enrich] [--background]
 rag search "Tl-208 background in PPC detectors" [--type talk] [--event 2357] [--since 2025-01-01]
+rag list [--type talk] [--event 2357] [--tag legend]
 rag status [job-id]
 rag enrich <document-id>…        describe figures with the vision model (~10–30 s per figure)
 rag rm <document-id>
